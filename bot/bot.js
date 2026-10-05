@@ -44,7 +44,8 @@ async function start() {
   });
 
   sock.ev.on("messages.upsert", async ({ messages, type }) => {
-    if (type !== "notify") return;
+    // "append" stiže za poruke poslate sa tvog telefona kad bot radi preko tvog naloga; stare poruke odbacuje STARTED_AT
+    if (type !== "notify" && type !== "append") return;
     for (const msg of messages) {
       const jid = msg.key.remoteJid || "";
       const text = textOf(msg);
