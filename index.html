@@ -307,7 +307,7 @@ function renderFeed() {
   const list = state.events
     .filter(e => !f || (e.who || []).includes(f))
     .slice()
-    .sort((a, b) => (a.date || "").localeCompare(b.date || "") || (a.createdAt || 0) - (b.createdAt || 0));
+    .sort((a, b) => (b.date || "").localeCompare(a.date || "") || (b.createdAt || 0) - (a.createdAt || 0));
   $("clear").hidden = !f;
   const sum = $("summary");
   if (f) {
