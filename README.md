@@ -34,3 +34,8 @@ Karma tabla za WhatsApp grupu DRUGARIĆI. Prati ko je organizovao druženje, kup
 | Ispalio | -3 |
 
 Članovi i akcije se menjaju na vrhu skripte u `index.html` (`MEMBERS` i `ACTIONS`).
+
+## WhatsApp bot
+
+U folderu `bot/` je bot koji u grupi prima komande tipa `!karma Marko castio` i upisuje poene
+u `data.json`. Uputstvo je u `bot/README.md`.
