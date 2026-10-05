@@ -1,6 +1,651 @@
 [
  {
   "who": [
+   "milos",
+   "djina",
+   "marko",
+   "vanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Nemanjino unapređenje u CMO",
+  "date": "2025-10-04",
+  "createdAt": 1759276800000,
+  "id": "y-00"
+ },
+ {
+  "who": [
+   "ksenija",
+   "djina",
+   "milos",
+   "tara",
+   "marko",
+   "stefan",
+   "nemanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Vanjin rođendan",
+  "date": "2025-10-08",
+  "createdAt": 1759276800001,
+  "id": "y-01"
+ },
+ {
+  "who": [
+   "milos",
+   "nemanja",
+   "stefan",
+   "vanja",
+   "tara",
+   "marko",
+   "aleksandar"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Đinina svadba",
+  "date": "2025-10-12",
+  "createdAt": 1759276800002,
+  "id": "y-02"
+ },
+ {
+  "who": [
+   "nemanja",
+   "djina",
+   "ksenija",
+   "milos",
+   "vanja",
+   "tara",
+   "stefan"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Rođenje Markovog Bogdana",
+  "date": "2025-10-22",
+  "createdAt": 1759276800003,
+  "id": "y-03"
+ },
+ {
+  "who": [
+   "marko"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Proslava Bogdanovog rođenja, kafana 61",
+  "date": "2025-10-23",
+  "createdAt": 1759276800004,
+  "id": "y-04"
+ },
+ {
+  "who": [
+   "marko"
+  ],
+  "action": "castio",
+  "pts": 3,
+  "note": "Častio ekipu za rođenje sina",
+  "date": "2025-10-23",
+  "createdAt": 1759276800005,
+  "id": "y-05"
+ },
+ {
+  "who": [
+   "nemanja",
+   "stefan"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Proslava Bogdanovog rođenja",
+  "date": "2025-10-23",
+  "createdAt": 1759276800006,
+  "id": "y-06"
+ },
+ {
+  "who": [
+   "ksenija",
+   "milos",
+   "marko",
+   "vanja",
+   "tara",
+   "djina"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Nemanjina slava",
+  "date": "2025-11-08",
+  "createdAt": 1759276800007,
+  "id": "y-07"
+ },
+ {
+  "who": [
+   "ksenija",
+   "tara",
+   "nemanja",
+   "milos",
+   "djina",
+   "vanja",
+   "marko"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Aleksandrov i Nidžin rođendan",
+  "date": "2025-11-15",
+  "createdAt": 1759276800008,
+  "id": "y-08"
+ },
+ {
+  "who": [
+   "ksenija",
+   "tara",
+   "djina",
+   "vanja",
+   "marko"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Miloševa slava",
+  "date": "2025-11-16",
+  "createdAt": 1759276800009,
+  "id": "y-09"
+ },
+ {
+  "who": [
+   "tara",
+   "milos",
+   "ksenija",
+   "stefan",
+   "marko",
+   "aleksandar"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Đinin novi posao u Frikomu",
+  "date": "2025-11-20",
+  "createdAt": 1759276800010,
+  "id": "y-10"
+ },
+ {
+  "who": [
+   "aleksandar"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Pečenjara Crna Svinja",
+  "date": "2025-11-23",
+  "createdAt": 1759276800011,
+  "id": "y-11"
+ },
+ {
+  "who": [
+   "aleksandar",
+   "stefan",
+   "nemanja",
+   "djina",
+   "ksenija",
+   "tara",
+   "milos"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Pečenjara Crna Svinja",
+  "date": "2025-11-23",
+  "createdAt": 1759276800012,
+  "id": "y-12"
+ },
+ {
+  "who": [
+   "nemanja"
+  ],
+  "action": "vozio",
+  "pts": 3,
+  "note": "Pokupio Đinu za pečenjaru",
+  "date": "2025-11-23",
+  "createdAt": 1759276800013,
+  "id": "y-13"
+ },
+ {
+  "who": [
+   "ksenija"
+  ],
+  "action": "pomogao",
+  "pts": 2,
+  "note": "Ispratila Đinu na autobus",
+  "date": "2025-11-23",
+  "createdAt": 1759276800014,
+  "id": "y-14"
+ },
+ {
+  "who": [
+   "stefan"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Hari Poter kafić na Dorćolu",
+  "date": "2025-12-02",
+  "createdAt": 1759276800015,
+  "id": "y-15"
+ },
+ {
+  "who": [
+   "stefan",
+   "ksenija",
+   "djina"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Hari Poter kafić",
+  "date": "2025-12-02",
+  "createdAt": 1759276800016,
+  "id": "y-16"
+ },
+ {
+  "who": [
+   "djina",
+   "ksenija",
+   "marko",
+   "stefan",
+   "tara",
+   "vanja",
+   "milos"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Nemanjin rođendan",
+  "date": "2025-12-03",
+  "createdAt": 1759276800017,
+  "id": "y-17"
+ },
+ {
+  "who": [
+   "nemanja",
+   "milos",
+   "ksenija",
+   "tara",
+   "vanja",
+   "marko"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Đinin prvi dan na novom poslu",
+  "date": "2025-12-15",
+  "createdAt": 1759276800018,
+  "id": "y-18"
+ },
+ {
+  "who": [
+   "djina",
+   "marko",
+   "milos",
+   "nemanja",
+   "stefan",
+   "ksenija"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Vukov prvi rođendan",
+  "date": "2025-12-15",
+  "createdAt": 1759276800019,
+  "id": "y-19"
+ },
+ {
+  "who": [
+   "nemanja"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Secret Santa 2025",
+  "date": "2025-12-26",
+  "createdAt": 1759276800020,
+  "id": "y-20"
+ },
+ {
+  "who": [
+   "nemanja"
+  ],
+  "action": "kasnio",
+  "pts": -1,
+  "note": "Kasnio skoro sat na sopstveni Secret Santa",
+  "date": "2025-12-26",
+  "createdAt": 1759276800021,
+  "id": "y-21"
+ },
+ {
+  "who": [
+   "marko",
+   "vanja",
+   "nemanja",
+   "aleksandar",
+   "djina",
+   "stefan",
+   "milos",
+   "tara",
+   "ksenija"
+  ],
+  "action": "poklon",
+  "pts": 5,
+  "note": "Secret Santa poklon",
+  "date": "2025-12-26",
+  "createdAt": 1759276800022,
+  "id": "y-22"
+ },
+ {
+  "who": [
+   "nemanja",
+   "stefan",
+   "djina",
+   "tara",
+   "milos",
+   "marko",
+   "vanja",
+   "aleksandar"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Secret Santa u Dockeru",
+  "date": "2025-12-26",
+  "createdAt": 1759276800023,
+  "id": "y-23"
+ },
+ {
+  "who": [
+   "aleksandar"
+  ],
+  "action": "pomogao",
+  "pts": 2,
+  "note": "Preneo Ksenijin poklon na Secret Santa",
+  "date": "2025-12-26",
+  "createdAt": 1759276800024,
+  "id": "y-24"
+ },
+ {
+  "who": [
+   "ksenija",
+   "djina",
+   "nemanja",
+   "tara",
+   "marko",
+   "milos",
+   "vanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Stefanov rođendan",
+  "date": "2026-01-21",
+  "createdAt": 1759276800025,
+  "id": "y-25"
+ },
+ {
+  "who": [
+   "stefan"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Veče društvenih igara",
+  "date": "2026-01-23",
+  "createdAt": 1759276800026,
+  "id": "y-26"
+ },
+ {
+  "who": [
+   "stefan",
+   "milos",
+   "ksenija",
+   "tara",
+   "marko",
+   "nemanja",
+   "djina",
+   "aleksandar"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Veče društvenih igara",
+  "date": "2026-01-23",
+  "createdAt": 1759276800027,
+  "id": "y-27"
+ },
+ {
+  "who": [
+   "nemanja"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Okupljanje posle povratka sa Maldiva",
+  "date": "2026-03-13",
+  "createdAt": 1759276800028,
+  "id": "y-28"
+ },
+ {
+  "who": [
+   "milos"
+  ],
+  "action": "pomogao",
+  "pts": 2,
+  "note": "Rezervisao sto za ekipu",
+  "date": "2026-03-13",
+  "createdAt": 1759276800029,
+  "id": "y-29"
+ },
+ {
+  "who": [
+   "nemanja",
+   "milos",
+   "djina",
+   "tara",
+   "vanja"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Okupljanje posle povratka sa Maldiva",
+  "date": "2026-03-13",
+  "createdAt": 1759276800030,
+  "id": "y-30"
+ },
+ {
+  "who": [
+   "nemanja"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Nedelja na Adi uz igre",
+  "date": "2026-04-05",
+  "createdAt": 1759276800031,
+  "id": "y-31"
+ },
+ {
+  "who": [
+   "nemanja",
+   "stefan"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Nedelja na Adi",
+  "date": "2026-04-05",
+  "createdAt": 1759276800032,
+  "id": "y-32"
+ },
+ {
+  "who": [
+   "djina"
+  ],
+  "action": "ispalio",
+  "pts": -3,
+  "note": "Otkazala istog dana (sastanak za plac)",
+  "date": "2026-04-05",
+  "createdAt": 1759276800033,
+  "id": "y-33"
+ },
+ {
+  "who": [
+   "ksenija",
+   "milos",
+   "stefan",
+   "nemanja",
+   "djina",
+   "marko",
+   "aleksandar",
+   "vanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Tarin rođendan",
+  "date": "2026-04-20",
+  "createdAt": 1759276800034,
+  "id": "y-34"
+ },
+ {
+  "who": [
+   "stefan"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Hari Poter kafić sa Tarom i decom",
+  "date": "2026-04-25",
+  "createdAt": 1759276800035,
+  "id": "y-35"
+ },
+ {
+  "who": [
+   "tara"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Hari Poter kafić",
+  "date": "2026-04-25",
+  "createdAt": 1759276800036,
+  "id": "y-36"
+ },
+ {
+  "who": [
+   "milos",
+   "nemanja",
+   "marko",
+   "djina",
+   "tara",
+   "stefan",
+   "aleksandar",
+   "vanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Ksenijin rođendan",
+  "date": "2026-04-28",
+  "createdAt": 1759276800037,
+  "id": "y-37"
+ },
+ {
+  "who": [
+   "ksenija",
+   "milos",
+   "stefan",
+   "marko",
+   "nemanja",
+   "tara",
+   "vanja",
+   "aleksandar"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Đinin rođendan",
+  "date": "2026-05-06",
+  "createdAt": 1759276800038,
+  "id": "y-38"
+ },
+ {
+  "who": [
+   "nemanja"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "El Kara dan na vikendici",
+  "date": "2026-05-24",
+  "createdAt": 1759276800039,
+  "id": "y-39"
+ },
+ {
+  "who": [
+   "nemanja"
+  ],
+  "action": "castio",
+  "pts": 3,
+  "note": "Ugostio i nahranio ekipu na vikendici",
+  "date": "2026-05-24",
+  "createdAt": 1759276800040,
+  "id": "y-40"
+ },
+ {
+  "who": [
+   "nemanja",
+   "marko",
+   "milos",
+   "tara",
+   "djina",
+   "aleksandar"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "El Kara dan na vikendici",
+  "date": "2026-05-24",
+  "createdAt": 1759276800041,
+  "id": "y-41"
+ },
+ {
+  "who": [
+   "tara"
+  ],
+  "action": "pomogao",
+  "pts": 2,
+  "note": "Donela rakiju i pivo",
+  "date": "2026-05-24",
+  "createdAt": 1759276800042,
+  "id": "y-42"
+ },
+ {
+  "who": [
+   "djina"
+  ],
+  "action": "pomogao",
+  "pts": 2,
+  "note": "Donela slatko",
+  "date": "2026-05-24",
+  "createdAt": 1759276800043,
+  "id": "y-43"
+ },
+ {
+  "who": [
+   "marko"
+  ],
+  "action": "pomogao",
+  "pts": 2,
+  "note": "Doneo domaći tart i piće",
+  "date": "2026-05-24",
+  "createdAt": 1759276800044,
+  "id": "y-44"
+ },
+ {
+  "who": [
+   "stefan"
+  ],
+  "action": "ispalio",
+  "pts": -3,
+  "note": "Javio istog dana da ne stiže sa svadbe u Hrvatskoj",
+  "date": "2026-05-24",
+  "createdAt": 1759276800045,
+  "id": "y-45"
+ },
+ {
+  "who": [
+   "djina",
+   "milos",
+   "vanja",
+   "tara"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Nemanjin sporazumni odlazak sa posla",
+  "date": "2026-06-02",
+  "createdAt": 1759276800046,
+  "id": "y-46"
+ },
+ {
+  "who": [
    "ksenija",
    "tara",
    "djina",
