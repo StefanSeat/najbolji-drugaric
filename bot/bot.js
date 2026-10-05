@@ -7,7 +7,8 @@ import pino from "pino";
 import { makeStore } from "./store.js";
 import { makeHandler } from "./commands.js";
 
-const GROUP_ID = process.env.GROUP_ID || "";
+// Toleriše i grešku "GROUP_ID=GROUP_ID=..." ili razmake pri lepljenju
+const GROUP_ID = (process.env.GROUP_ID || "").trim().replace(/^GROUP_ID=/i, "").trim();
 // Oznaka ispred svakog odgovora, da se vidi da piše bot (bitno kad bot radi preko ličnog broja)
 const REPLY_PREFIX = process.env.REPLY_PREFIX ?? "🤖 ";
 // Poruke starije od pokretanja se preskaču, da se posle restarta ništa ne upiše dva puta
