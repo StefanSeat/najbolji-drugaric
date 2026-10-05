@@ -8,6 +8,10 @@ import { makeStore } from "./store.js";
 import { makeHandler } from "./commands.js";
 
 const GROUP_ID = process.env.GROUP_ID || "";
+// Oznaka ispred svakog odgovora, da se vidi da piše bot (bitno kad bot radi preko ličnog broja)
+const REPLY_PREFIX = process.env.REPLY_PREFIX ?? "🤖 ";
+// Poruke starije od pokretanja se preskaču, da se posle restarta ništa ne upiše dva puta
+const STARTED_AT = Math.floor(Date.now() / 1000) - 5;
 const handle = makeHandler(makeStore());
 const log = pino({ level: process.env.LOG_LEVEL || "warn" });
 
@@ -45,19 +49,20 @@ async function start() {
       const jid = msg.key.remoteJid || "";
       const text = textOf(msg);
       if (!text.startsWith("!")) continue; // sve ostalo se ignoriše
+      if (Number(msg.messageTimestamp || 0) < STARTED_AT) continue;
 
       if (text.trim().toLowerCase() === "!grupa") {
-        if (jid.endsWith("@g.us")) await sock.sendMessage(jid, { text: `GROUP_ID=${jid}` }, { quoted: msg });
+        if (jid.endsWith("@g.us")) await sock.sendMessage(jid, { text: `${REPLY_PREFIX}GROUP_ID=${jid}` }, { quoted: msg });
         continue;
       }
       if (!GROUP_ID || jid !== GROUP_ID) continue; // radi samo u grupi Drugarići
 
       try {
         const reply = await handle(text);
-        if (reply) await sock.sendMessage(jid, { text: reply }, { quoted: msg });
+        if (reply) await sock.sendMessage(jid, { text: REPLY_PREFIX + reply }, { quoted: msg });
       } catch (e) {
         console.error(e);
-        await sock.sendMessage(jid, { text: "⚠️ Nisam uspeo da upišem poene, probaj ponovo za minut." }, { quoted: msg });
+        await sock.sendMessage(jid, { text: REPLY_PREFIX + "⚠️ Nisam uspeo da upišem poene, probaj ponovo za minut." }, { quoted: msg });
       }
     }
   });

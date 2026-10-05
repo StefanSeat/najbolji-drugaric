@@ -24,8 +24,9 @@ Svaki unos se upisuje u `data.json` u ovom repou, pa se odmah vidi i na GitHub s
 
 ## Šta ti treba
 
-1. **Broj za bota**: druga SIM ili eSIM kartica sa WhatsApp-om (može i WhatsApp Business).
-   Ne koristi svoj lični broj.
+1. **Nalog za bota**: najbezbednije je druga SIM ili eSIM kartica sa WhatsApp-om.
+   Može i tvoj lični broj (bot se poveže kao povezani uređaj), ali tada odgovori stižu
+   od tebe (sa oznakom 🤖), a eventualna blokada od strane WhatsApp-a pogađa tvoj nalog.
 2. **Računar koji je stalno upaljen** sa Node.js 20 ili novijim: mali VPS ili Raspberry Pi.
 3. **GitHub token** samo za ovaj repo:
    GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens →
