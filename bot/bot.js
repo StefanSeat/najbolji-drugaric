@@ -6,6 +6,7 @@ import qrcode from "qrcode-terminal";
 import pino from "pino";
 import { makeStore } from "./store.js";
 import { makeHandler } from "./commands.js";
+import { makeState } from "./state.js";
 
 // Toleriše i grešku "GROUP_ID=GROUP_ID=..." ili razmake pri lepljenju
 const GROUP_ID = (process.env.GROUP_ID || "").trim().replace(/^GROUP_ID=/i, "").trim();
@@ -13,7 +14,7 @@ const GROUP_ID = (process.env.GROUP_ID || "").trim().replace(/^GROUP_ID=/i, "").
 const REPLY_PREFIX = process.env.REPLY_PREFIX ?? "🤖 ";
 // Poruke starije od pokretanja se preskaču, da se posle restarta ništa ne upiše dva puta
 const STARTED_AT = Math.floor(Date.now() / 1000) - 5;
-const handle = makeHandler(makeStore());
+const handle = makeHandler(makeStore(), makeState());
 const log = pino({ level: process.env.LOG_LEVEL || "warn" });
 
 function textOf(msg) {
@@ -60,7 +61,11 @@ async function start() {
       if (!GROUP_ID || jid !== GROUP_ID) continue; // radi samo u grupi Drugarići
 
       try {
-        const reply = await handle(text);
+        const ctx = {
+          senderId: msg.key.fromMe ? "me" : (msg.key.participant || msg.participant || ""),
+          pushName: msg.pushName || "",
+        };
+        const reply = await handle(text, ctx);
         if (reply) await sock.sendMessage(jid, { text: REPLY_PREFIX + reply }, { quoted: msg });
       } catch (e) {
         console.error(e);

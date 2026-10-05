@@ -55,9 +55,10 @@ test("opis unosa", () => {
 
 test("komande kroz handler (lokalni fajl)", async () => {
   const { makeHandler } = await import("./commands.js");
+  const { memoryState } = await import("./state.js");
   const events = [];
   const store = { async load() { return { events: structuredClone(events), version: null }; }, async save(list) { events.splice(0, events.length, ...list); } };
-  const handle = makeHandler(store);
+  const handle = makeHandler(store, memoryState());
   const r1 = await handle("!karma Marko castio rođendan");
   assert.match(r1, /✅ Marko \+3/);
   assert.match(r1, /Marko 3/);
@@ -68,4 +69,34 @@ test("komande kroz handler (lokalni fajl)", async () => {
   assert.match(await handle("!ponisti"), /Nema unosa/);
   assert.match(await handle("!karma Goran +1"), /⚠️/);
   assert.equal(await handle("!nesto"), null);
+});
+
+test("druženje: otvori, prijave, bilo", async () => {
+  const { makeHandler } = await import("./commands.js");
+  const { memoryState } = await import("./state.js");
+  const events = [];
+  const store = { async load() { return { events: structuredClone(events), version: null }; }, async save(list) { events.splice(0, events.length, ...list); } };
+  const handle = makeHandler(store, memoryState());
+  const nem = { senderId: "381601@s.whatsapp.net", pushName: "Nemanja Karapandzic" };
+  const mik = { senderId: "381602@s.whatsapp.net", pushName: "Milos Glovo" };
+  const nep = { senderId: "381609@s.whatsapp.net", pushName: "Xyz" };
+
+  assert.match(await handle("!dolazim", mik), /Nema otvorenog/);
+  assert.match(await handle("!druzenje Gradac subota 12h", nem), /Organizuje: Nemanja/);
+  assert.match(await handle("!druzenje Nesto drugo", mik), /Već je otvoreno/);
+  assert.match(await handle("!dolazim", mik), /Dolaze \(2\): Nemanja, Miloš/);
+  assert.match(await handle("!dolazim", nep), /!ja/);
+  assert.match(await handle("!ja Tara", nep), /Tara/);
+  assert.match(await handle("!dolazim", nep), /Dolaze \(3\)/);
+  assert.match(await handle("!ne mogu Đina", nem), /Ne mogu \(1\): Đurdjina/);
+  assert.match(await handle("!ne mogu", mik), /Dolaze \(2\)/);
+  assert.match(await handle("!ko dolazi", nem), /Gradac/);
+  const casti = await handle("!ko casti", nem);
+  assert.match(casti, /Časti: \*(Nemanja|Tara)\*/);
+  const bilo = await handle("!bilo", nem);
+  assert.match(bilo, /Nemanja \+5 · Organizovao/);
+  assert.match(bilo, /Nemanja, Tara \+3 svako · Došao/);
+  assert.equal(events.length, 2);
+  assert.match(await handle("!bilo", nem), /Nema otvorenog/);
+  assert.match(await handle("!kocasti", nem), /Časti: \*/);
 });

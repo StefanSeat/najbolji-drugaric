@@ -11,6 +11,13 @@ Sve ostale poruke ignoriše: ne čuva ih, ne šalje ih nikome i ne koristi AI.
 | `!karma Tara Đina +3 došle na kafu` | Tari i Đini po +3 sa razlogom |
 | `!karma Mikan ispalio Gradac` | Milošu −3 |
 | `!tabela` | Tabela za 2026. |
+| `!ko casti` | Nasumično bira ko časti (među prijavljenima, ako je druženje otvoreno) |
+| `!druzenje Gradac subota 12h` | Otvara prijave za druženje |
+| `!dolazim` / `!ne mogu` | Prijava; može i za druge: `!dolazim Marko Tara` |
+| `!ko dolazi` | Spisak prijavljenih |
+| `!bilo` | Zatvara druženje: organizator +5, svi prijavljeni +3 |
+| `!otkazi` | Zatvara druženje bez poena |
+| `!ja Marko` | Bot zapamti koji si član (treba samo ako te ne prepozna po imenu) |
 | `!ponisti` | Briše poslednji unos koji je upisao bot |
 | `!akcije` | Spisak akcija i poena |
 | `!pomoc` | Uputstvo |
@@ -50,6 +57,7 @@ npm start
 4. Upiši tu vrednost u `.env` kao `GROUP_ID` i restartuj bota. Od tada radi samo u toj grupi.
 
 Prijava se čuva u folderu `auth/`, pa QR treba skenirati samo prvi put.
+Otvoreno druženje i ko je koji broj čuvaju se u `state.json` pored bota.
 
 ### Da radi stalno (i posle restarta računara)
 

@@ -141,6 +141,16 @@ export const HELP = [
   "  !karma Mikan ispalio Gradac",
   "",
   "*!tabela* trenutni poeni za 2026.",
+  "*!ko casti* nasumično bira ko časti 🎲",
+  "",
+  "*Druženja*",
+  "  !druzenje Gradac subota 12h  otvori prijave",
+  "  !dolazim / !ne mogu  (ili !dolazim Marko Tara za druge)",
+  "  !ko dolazi  spisak",
+  "  !bilo  završi i upiše poene (organizator +5, svi koji dolaze +3)",
+  "  !otkazi  zatvori bez poena",
+  "",
+  "*!ja <ime>* bot zapamti ko si",
   "*!ponisti* briše poslednji unos koji je bot upisao",
   "*!akcije* spisak akcija i poena",
   "*!pomoc* ova poruka",
@@ -148,4 +158,18 @@ export const HELP = [
 
 export function actionsText() {
   return "*Akcije*\n" + ACTIONS.map(a => `${a.key}: ${fmtPts(a.pts)} (${a.label})`).join("\n") + "\nIli bilo koji broj, npr. +4 ili -2";
+}
+
+/** Nađe člana po imenu ili nadimku (jedna reč), ili vrati null. */
+export function findMember(word) {
+  return memberByAlias.get(norm(word)) || null;
+}
+
+/** Pokuša da prepozna člana iz WhatsApp imena profila, npr. "Milos Glovo" → milos. */
+export function memberFromProfileName(name) {
+  for (const w of String(name || "").split(/\s+/)) {
+    const m = findMember(w);
+    if (m) return m;
+  }
+  return null;
 }
