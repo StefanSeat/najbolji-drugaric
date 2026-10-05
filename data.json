@@ -954,5 +954,17 @@
   "date": "2026-10-05",
   "createdAt": 1791200002549,
   "id": "bot-muv68fedv92"
+ },
+ {
+  "who": [
+   "milos"
+  ],
+  "action": "custom",
+  "pts": 1,
+  "note": "Cestitalo Tari 4 godine u Glovu",
+  "label": "Cestitalo Tari 4 godine u Glovu",
+  "date": "2026-10-05",
+  "createdAt": 1791200127513,
+  "id": "bot-muv6b3tl79y"
  }
 ]
