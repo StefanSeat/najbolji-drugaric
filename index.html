@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="logo.png">
+<meta property="og:title" content="Najbolji Drugarić">
+<meta property="og:description" content="Karma tabla grupe Drugarići">
+<meta property="og:image" content="logo.png">
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Najbolji Drugarić</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: one narrow column; podium on top, karma form, then the ledger feed. Points are the loudest thing on the page. */
+/* Layout: one narrow column; logo sticker + podium on top, karma form, then the ledger feed, over a drifting heart-and-clover pattern. */
+:root {
+  --bg: #fff6d5;
+  --surface: #ffffff;
+  --ink: #22312b;
+  --muted: #64716b;
+  --line: #ecdca0;
+  --blossom: #00a084;
+  --blossom-soft: #d4f1e8;
+  --sun: #f3cb38;
+  --plus: #00875f;
+  --plus-soft: #d9f3e6;
+  --minus: #d4471f;
+  --minus-soft: #fde2d6;
+  --gold: #d9a600;
+  --sticker: #ffffff;
+  --on-accent: #ffffff;
+  --font-display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-num: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f261f; --surface: #163329; --ink: #f6f1df; --muted: #a8bcb3; --line: #2b4b40;
+    --blossom: #2fd1a8; --blossom-soft: #164a3c; --sun: #f3cb38; --plus: #5be0ad; --plus-soft: #17402f;
+    --minus: #ff8a5c; --minus-soft: #44261c; --gold: #f3cb38; --sticker: #fffdf3; --on-accent: #0f261f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f261f; --surface: #163329; --ink: #f6f1df; --muted: #a8bcb3; --line: #2b4b40;
+  --blossom: #2fd1a8; --blossom-soft: #164a3c; --sun: #f3cb38; --plus: #5be0ad; --plus-soft: #17402f;
+  --minus: #ff8a5c; --minus-soft: #44261c; --gold: #f3cb38; --sticker: #fffdf3; --on-accent: #0f261f; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background-color: var(--bg); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg opacity='.55'%3E%3Cpath transform='translate(18 20) rotate(-14 12 12)' fill='%23f3cb38' d='M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z'/%3E%3Cpath transform='translate(118 104) rotate(18 12 12) scale(1.3)' fill='%23f3cb38' d='M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z'/%3E%3Cg transform='translate(104 22) rotate(20 14 14)' fill='%2300a084'%3E%3Ccircle cx='9' cy='9' r='5'/%3E%3Ccircle cx='19' cy='9' r='5'/%3E%3Ccircle cx='9' cy='19' r='5'/%3E%3Ccircle cx='19' cy='19' r='5'/%3E%3Cpath d='M14 14q4 8 1 13' stroke='%2300a084' stroke-width='2' fill='none'/%3E%3C/g%3E%3Cg transform='translate(30 112) rotate(-25 14 14) scale(.8)' fill='%2300a084'%3E%3Ccircle cx='9' cy='9' r='5'/%3E%3Ccircle cx='19' cy='9' r='5'/%3E%3Ccircle cx='9' cy='19' r='5'/%3E%3Ccircle cx='19' cy='19' r='5'/%3E%3Cpath d='M14 14q4 8 1 13' stroke='%2300a084' stroke-width='2' fill='none'/%3E%3C/g%3E%3Ccircle cx='80' cy='80' r='3' fill='%2300a084'/%3E%3Ccircle cx='160' cy='60' r='2.5' fill='%23f3cb38'/%3E%3Ccircle cx='70' cy='160' r='2.5' fill='%23f3cb38'/%3E%3C/g%3E%3C/svg%3E"); background-size: 180px 180px; color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; min-height: 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  body { animation: drift 60s linear infinite; }
+  @keyframes drift { from { background-position: 0 0; } to { background-position: 180px 360px; } }
+}
+.wrap { max-width: 760px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; display: grid; gap: 28px; }
+h1, h2 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.1rem, 7vw, 3.4rem); font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
+h1 span { color: var(--blossom); }
+h1 em { font-style: normal; background: linear-gradient(transparent 62%, var(--sun) 62%); padding-inline: 2px; }
+h2 { font-size: 1.35rem; font-weight: 800; }
+.eyebrow { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.lede { color: var(--muted); max-width: 60ch; margin: 8px 0 0; }
+header { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 18px; align-items: center; }
+header .lede { grid-column: 1 / -1; }
+.sticker { width: clamp(92px, 22vw, 128px); aspect-ratio: 1; max-width: 100%; border-radius: 50%; background: var(--sticker); display: grid; place-items: center; transform: rotate(-8deg); box-shadow: 0 0 0 3px var(--sun), 0 8px 0 -1px var(--blossom); }
+.sticker img { width: 78%; height: auto; }
+@media (prefers-reduced-motion: no-preference) { .sticker { animation: wobble 4s ease-in-out infinite; } @keyframes wobble { 0%,100% { transform: rotate(-8deg); } 50% { transform: rotate(-2deg) scale(1.03); } } }
+.titles { display: grid; gap: 4px; min-width: 0; }
+.eyebrow { letter-spacing: 0.32em; }
+.notice { font-size: 0.9rem; color: var(--muted); border: 1px dashed var(--line); border-radius: 10px; padding: 10px 12px; }
+
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--surface); gap: 2px; }
+.seg button { border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 0.85rem; padding: 5px 12px; border-radius: 999px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+
+/* Podium */
+.podium { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; align-items: end; margin-top: 14px; }
+.step { background: var(--surface); border: 2px solid var(--line); border-radius: 18px; padding: 14px 10px 12px; text-align: center; display: grid; gap: 2px; min-width: 0; }
+.step .place { font-family: var(--font-num); font-size: 0.75rem; color: var(--muted); }
+.step .name { font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; overflow-wrap: anywhere; }
+.step .pts { font-family: var(--font-num); font-weight: 700; font-size: 1.6rem; font-variant-numeric: tabular-nums; }
+.step.first { border-color: var(--gold); padding-block: 26px 16px; box-shadow: 0 6px 0 -2px var(--gold); }
+.step.first .place { color: var(--gold); font-weight: 700; }
+.step.first .pts { font-size: 2.2rem; }
+.crown { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+
+/* Ranking */
+.rank { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 4px; }
+.rank li { display: grid; grid-template-columns: 2ch minmax(0, 7.5rem) 1fr 4.5ch; align-items: center; gap: 10px; padding: 6px 4px; border-radius: 8px; cursor: pointer; }
+.rank li:hover, .rank li:focus-visible { background: var(--surface); outline: none; }
+.rank, .feed { background: color-mix(in srgb, var(--bg) 82%, transparent); border-radius: 14px; padding: 8px; }
+.rank li.active { background: var(--blossom-soft); }
+.rank .n { font-family: var(--font-num); color: var(--muted); font-size: 0.8rem; text-align: right; }
+.rank .who { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar { position: relative; height: 10px; background: var(--line); border-radius: 999px; overflow: hidden; }
+.bar i { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 999px; background: var(--blossom); }
+.bar i.neg { background: var(--minus); }
+.rank .p { font-family: var(--font-num); font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Form */
+.card { background: var(--surface); border: 2px solid var(--sun); border-radius: 20px; padding: 18px; display: grid; gap: 16px; }
+.field { display: grid; gap: 8px; }
+.field > .label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: inherit; font-size: 0.9rem; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.actions { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 6px; }
+.act { font: inherit; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 10px; padding: 8px 10px; cursor: pointer; }
+.act[aria-pressed="true"] { border-color: var(--blossom); box-shadow: inset 0 0 0 1px var(--blossom); background: var(--blossom-soft); }
+.pill { font-family: var(--font-num); font-weight: 700; font-size: 0.8rem; padding: 2px 8px; border-radius: 999px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pill.plus { background: var(--plus-soft); color: var(--plus); }
+.pill.minus { background: var(--minus-soft); color: var(--minus); }
+.pill.zero { background: var(--line); color: var(--muted); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+.row > * { flex: 1 1 160px; min-width: 0; }
+input[type="text"], input[type="date"], input[type="number"] { font: inherit; width: 100%; padding: 9px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+.custom-pts[hidden] { display: none; }
+.submit { font: inherit; font-weight: 700; font-family: var(--font-display); font-size: 1.05rem; border: 0; border-radius: 12px; padding: 12px 16px; background: var(--blossom); color: var(--on-accent); cursor: pointer; box-shadow: 0 4px 0 var(--sun); }
+.submit:active:not(:disabled) { transform: translateY(2px); box-shadow: 0 2px 0 var(--sun); }
+.submit:disabled { opacity: 0.45; cursor: not-allowed; }
+.status { font-size: 0.9rem; color: var(--muted); min-height: 1.4em; margin: 0; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--blossom); outline-offset: 2px; }
+
+/* Feed */
+.summary { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.9rem; color: var(--muted); margin-top: 10px; }
+.summary b { font-family: var(--font-num); color: var(--ink); }
+.feed { list-style: none; margin: 14px 0 0; padding: 0; display: grid; }
+.feed li { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr) auto; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); align-items: start; }
+.feed .date { font-family: var(--font-num); font-size: 0.78rem; color: var(--muted); padding-top: 2px; }
+.feed .what { min-width: 0; }
+.feed .what strong { font-weight: 700; }
+.feed .note { color: var(--muted); font-size: 0.9rem; overflow-wrap: anywhere; }
+.feed .side { display: grid; justify-items: end; gap: 6px; }
+.del { font: inherit; font-size: 0.75rem; border: 0; background: none; color: var(--muted); cursor: pointer; padding: 0; text-decoration: underline; }
+.del.confirm { color: var(--minus); font-weight: 700; }
+.empty { color: var(--muted); padding: 18px 0; border-top: 1px solid var(--line); }
+.clear-filter { font: inherit; font-size: 0.85rem; border: 0; background: none; color: var(--blossom); cursor: pointer; text-decoration: underline; padding: 0; }
+footer { font-size: 0.8rem; color: var(--muted); padding-bottom: 56px; }
+.player { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 5; display: flex; align-items: center; gap: 10px; font: inherit; font-weight: 700; font-family: var(--font-display); border: 0; border-radius: 999px; padding: 10px 16px 10px 12px; background: var(--ink); color: var(--bg); cursor: pointer; box-shadow: 0 4px 0 var(--sun); }
+.eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 14px; }
+.eq i { width: 3px; height: 4px; background: var(--sun); border-radius: 2px; }
+.player.on .eq i { animation: eq 0.9s ease-in-out infinite; }
+.player.on .eq i:nth-child(2) { animation-delay: -0.3s; } .player.on .eq i:nth-child(3) { animation-delay: -0.6s; }
+@keyframes eq { 0%,100% { height: 4px; } 50% { height: 14px; } }
+.confetti { position: fixed; top: -30px; z-index: 6; pointer-events: none; width: 22px; height: 22px; animation: fall 1.8s ease-in forwards; }
+@keyframes fall { to { transform: translateY(110vh) rotate(540deg); opacity: 0.6; } }
+@media (max-width: 480px) {
+  .rank li { grid-template-columns: 2ch minmax(0, 5.5rem) 1fr 4.5ch; gap: 8px; }
+  .feed li { grid-template-columns: minmax(0, 1fr) auto; }
+  .feed .date { grid-column: 1 / -1; padding: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bar i { transition: width 0.4s ease; }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="sticker"><img src="logo.png" alt="Logo grupe Drugarići: žuto srce sa zelenom detelinom"></div>
+    <div class="titles">
+      <div class="eyebrow">Drugarići · karma</div>
+      <h1>Najbolji <em>Drugarić</em></h1>
+    </div>
+    <p class="lede">Ko je kupio poklon, ko je otišao na kafu, ko je organizovao, a ko je ispalio. Svaka dobra stvar donosi poene, svako ispaljivanje ih odnosi.</p>
+  </header>
+
+  <section aria-labelledby="h-rank">
+    <div class="section-head">
+      <h2 id="h-rank">Tabela</h2>
+      <div class="seg" role="group" aria-label="Period">
+        <button type="button" id="p-all" aria-pressed="true">Sve vreme</button>
+        <button type="button" id="p-month" aria-pressed="false">Ovaj mesec</button>
+      </div>
+    </div>
+    <div class="podium" id="podium"></div>
+    <ol class="rank" id="rank"></ol>
+  </section>
+
+  <section aria-labelledby="h-add">
+    <form class="card" id="form" autocomplete="off">
+      <h2 id="h-add">Upiši karmu</h2>
+      <div class="field">
+        <span class="label">Ko</span>
+        <div class="chips" id="who"></div>
+      </div>
+      <div class="field">
+        <span class="label">Šta je uradio</span>
+        <div class="actions" id="acts"></div>
+      </div>
+      <div class="row custom-pts" id="custom-wrap" hidden>
+        <label class="field"><span class="label">Poeni</span><input type="number" id="custom-pts" value="1" min="-20" max="20" step="1"></label>
+      </div>
+      <div class="row">
+        <label class="field"><span class="label">Detalj</span><input type="text" id="note" maxlength="140" placeholder="npr. Gradac, rođendan kod Marka"></label>
+        <label class="field" style="flex:0 1 170px"><span class="label">Datum</span><input type="date" id="date"></label>
+      </div>
+      <button class="submit" id="submit" type="submit" disabled>Upiši</button>
+      <p class="status" id="status" role="status"></p>
+    </form>
+    <p class="notice" id="readonly" hidden>Možeš da gledaš tabelu, ali nemaš pravo upisa. Zamoli Stefana da te doda kao urednika.</p>
+  </section>
+
+  <section aria-labelledby="h-feed">
+    <div class="section-head">
+      <h2 id="h-feed">Dnevnik</h2>
+      <button type="button" class="clear-filter" id="clear" hidden>Prikaži sve</button>
+    </div>
+    <div class="summary" id="summary" hidden></div>
+    <ul class="feed" id="feed"></ul>
+  </section>
+
+  <footer id="foot">Učitavam podatke…</footer>
+<audio id="himna" src="himna.mp3" loop preload="none"></audio>
+<button type="button" class="player" id="player" aria-pressed="false"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span id="player-label">Pusti himnu</span></button>
+</div>
+
+<script>
+const MEMBERS = [
+  { id: "marko", name: "Marko" },
+  { id: "vanja", name: "Vanja" },
+  { id: "nemanja", name: "Nemanja" },
+  { id: "aleksandar", name: "Aleksandar" },
+  { id: "djina", name: "Đurdjina" },
+  { id: "stefan", name: "Stefan" },
+  { id: "milos", name: "Miloš" },
+  { id: "tara", name: "Tara" },
+  { id: "ksenija", name: "Ksenija" }
+];
+const ACTIONS = [
+  { key: "organizovao", label: "Organizovao druženje", pts: 5 },
+  { key: "poklon", label: "Kupio poklon", pts: 5 },
+  { key: "castio", label: "Častio ekipu", pts: 3 },
+  { key: "vozio", label: "Vozio ekipu", pts: 3 },
+  { key: "dosao", label: "Došao na druženje", pts: 3 },
+  { key: "kafa", label: "Otišao na kafu / pivo", pts: 2 },
+  { key: "pomogao", label: "Pomogao / doneo nešto", pts: 2 },
+  { key: "doprinos", label: "Doprinos grupi", pts: 3 },
+  { key: "cestitao", label: "Čestitao rođendan / uspeh", pts: 1 },
+  { key: "potvrdio", label: "Javio se na vreme", pts: 1 },
+  { key: "podrska", label: "Podržao drugarića", pts: 1 },
+  { key: "kasnio", label: "Kasnio", pts: -1 },
+  { key: "nijecastio", label: "Izbegao da časti", pts: -2 },
+  { key: "ghost", label: "Ghostovao grupu", pts: -2 },
+  { key: "ispalio", label: "Ispalio", pts: -3 },
+  { key: "custom", label: "Nešto drugo", pts: null }
+];
+const nameOf = Object.fromEntries(MEMBERS.map(m => [m.id, m.name]));
+const actOf = Object.fromEntries(ACTIONS.map(a => [a.key, a]));
+
+const state = { loading: true, signedOut: false, events: [], period: "all", filter: null, who: new Set(), action: null, canWrite: true, pendingDelete: null };
+let store = null;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const todayISO = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); };
+const fmtPts = n => (n > 0 ? "+" : n < 0 ? "−" : "") + Math.abs(n);
+const pillClass = n => n > 0 ? "plus" : n < 0 ? "minus" : "zero";
+const MONTHS = ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "avg", "sep", "okt", "nov", "dec"];
+const fmtDate = iso => { const [y, m, d] = (iso || "").split("-").map(Number); return y ? `${d}. ${MONTHS[m - 1]}` : ""; };
+
+function scores(events) {
+  const s = Object.fromEntries(MEMBERS.map(m => [m.id, 0]));
+  for (const e of events) for (const w of e.who || []) if (w in s) s[w] += Number(e.pts) || 0;
+  return s;
+}
+function periodEvents() {
+  if (state.period === "all") return state.events;
+  const ym = todayISO().slice(0, 7);
+  return state.events.filter(e => (e.date || "").startsWith(ym));
+}
+
+function renderBoard() {
+  const s = scores(periodEvents());
+  const ranked = MEMBERS.map(m => ({ ...m, pts: s[m.id] })).sort((a, b) => b.pts - a.pts || a.name.localeCompare(b.name, "sr"));
+  const top = ranked.slice(0, 3);
+  if (!state.events.length || ranked.every(r => r.pts === 0)) {
+    $("podium").innerHTML = `<div class="step first" style="grid-column:1 / -1"><span class="crown">Najbolji drugarić</span><span class="name">${state.signedOut ? "Prijavi se da vidiš poene" : state.loading ? "Učitavam poene…" : "Još niko nema poene"}</span></div>`;
+    $("rank").innerHTML = "";
+    return;
+  }
+  const order = [top[1], top[0], top[2]];
+  const places = ["2.", "1.", "3."];
+  $("podium").innerHTML = order.map((m, i) => m ? `
+    <div class="step ${i === 1 ? "first" : ""}">
+      ${i === 1 ? '<span class="crown">Najbolji drugarić</span>' : `<span class="place">${places[i]} mesto</span>`}
+      <span class="name">${esc(m.name)}</span>
+      <span class="pts">${fmtPts(m.pts)}</span>
+    </div>` : "<div></div>").join("");
+  const max = Math.max(1, ...ranked.map(r => Math.abs(r.pts)));
+  $("rank").innerHTML = ranked.map((m, i) => `
+    <li tabindex="0" data-id="${m.id}" class="${state.filter === m.id ? "active" : ""}" aria-label="${esc(m.name)}, ${m.pts} poena, prikaži dnevnik">
+      <span class="n">${i + 1}</span>
+      <span class="who">${esc(m.name)}</span>
+      <span class="bar"><i class="${m.pts < 0 ? "neg" : ""}" style="width:${(Math.abs(m.pts) / max) * 100}%"></i></span>
+      <span class="p">${fmtPts(m.pts)}</span>
+    </li>`).join("");
+}
+
+function renderFeed() {
+  const f = state.filter;
+  const list = state.events
+    .filter(e => !f || (e.who || []).includes(f))
+    .slice()
+    .sort((a, b) => (b.date || "").localeCompare(a.date || "") || (b.createdAt || 0) - (a.createdAt || 0));
+  $("clear").hidden = !f;
+  const sum = $("summary");
+  if (f) {
+    const mine = list.map(e => Number(e.pts) || 0);
+    const plus = mine.filter(n => n > 0).reduce((a, b) => a + b, 0);
+    const minus = mine.filter(n => n < 0).reduce((a, b) => a + b, 0);
+    sum.hidden = false;
+    sum.innerHTML = `<span>${esc(nameOf[f])}</span><span>Ukupno <b>${fmtPts(plus + minus)}</b></span><span>Dobrih dela <b>${fmtPts(plus)}</b></span><span>Minusa <b>${fmtPts(minus)}</b></span><span>Unosa <b>${list.length}</b></span>`;
+  } else sum.hidden = true;
+
+  if (!list.length) {
+    $("feed").innerHTML = `<li class="empty" style="display:block">${state.signedOut ? "Poeni i dnevnik se vide samo kad si prijavljen na claude.ai. Prijavi se dugmetom Sign in dole na stranici, pa otvori link ponovo." : state.loading ? "Učitavam dnevnik…" : state.events.length ? "Nema unosa za ovog drugarića." : "Još nema unosa. Izaberi drugariće i šta su uradili, pa klikni Upiši."}</li>`;
+    return;
+  }
+  $("feed").innerHTML = list.map(e => {
+    const a = actOf[e.action];
+    const label = e.label || (a ? a.label : "Nešto");
+    const names = (e.who || []).map(w => nameOf[w] || w).join(", ");
+    const pts = Number(e.pts) || 0;
+    const confirming = state.pendingDelete === e.id;
+    return `<li>
+      <span class="date">${fmtDate(e.date)}</span>
+      <div class="what"><strong>${esc(names)}</strong> · ${esc(label)}${e.note ? `<div class="note">${esc(e.note)}</div>` : ""}</div>
+      <div class="side"><span class="pill ${pillClass(pts)}">${fmtPts(pts)}${(e.who || []).length > 1 ? " svako" : ""}</span>
+      ${state.canWrite ? `<button type="button" class="del ${confirming ? "confirm" : ""}" data-del="${esc(e.id)}">${confirming ? "Sigurno obriši?" : "Obriši"}</button>` : ""}</div>
+    </li>`;
+  }).join("");
+}
+
+function renderForm() {
+  $("who").innerHTML = MEMBERS.map(m => `<button type="button" class="chip" data-who="${m.id}" aria-pressed="${state.who.has(m.id)}">${esc(m.name)}</button>`).join("");
+  $("acts").innerHTML = ACTIONS.map(a => `<button type="button" class="act" data-act="${a.key}" aria-pressed="${state.action === a.key}"><span>${esc(a.label)}</span>${a.pts == null ? '<span class="pill zero">±</span>' : `<span class="pill ${pillClass(a.pts)}">${fmtPts(a.pts)}</span>`}</button>`).join("");
+  $("custom-wrap").hidden = state.action !== "custom";
+  $("submit").disabled = !(state.who.size && state.action);
+}
+
+function render() { renderBoard(); renderFeed(); }
+
+/* Wiring */
+$("p-all").onclick = () => { state.period = "all"; $("p-all").setAttribute("aria-pressed", "true"); $("p-month").setAttribute("aria-pressed", "false"); renderBoard(); };
+$("p-month").onclick = () => { state.period = "month"; $("p-month").setAttribute("aria-pressed", "true"); $("p-all").setAttribute("aria-pressed", "false"); renderBoard(); };
+function toggleFilter(id) { state.filter = state.filter === id ? null : id; render(); }
+$("rank").addEventListener("click", e => { const li = e.target.closest("li[data-id]"); if (li) toggleFilter(li.dataset.id); });
+$("rank").addEventListener("keydown", e => { if (e.key !== "Enter" && e.key !== " ") return; const li = e.target.closest("li[data-id]"); if (li) { e.preventDefault(); toggleFilter(li.dataset.id); } });
+$("clear").onclick = () => { state.filter = null; render(); };
+$("who").addEventListener("click", e => { const b = e.target.closest("[data-who]"); if (!b) return; const id = b.dataset.who; state.who.has(id) ? state.who.delete(id) : state.who.add(id); renderForm(); });
+$("acts").addEventListener("click", e => { const b = e.target.closest("[data-act]"); if (!b) return; state.action = b.dataset.act; renderForm(); });
+$("feed").addEventListener("click", async e => {
+  const b = e.target.closest("[data-del]"); if (!b) return;
+  const id = b.dataset.del;
+  if (state.pendingDelete !== id) { state.pendingDelete = id; renderFeed(); return; }
+  state.pendingDelete = null;
+  try { await store.remove(id); } catch (err) { $("status").textContent = "Brisanje nije uspelo: " + (err?.message || err?.code || "greška"); }
+  renderFeed();
+});
+$("date").value = todayISO();
+
+$("form").addEventListener("submit", async e => {
+  e.preventDefault();
+  if (!state.who.size || !state.action) return;
+  const a = actOf[state.action];
+  let pts = a.pts;
+  if (pts == null) { pts = Math.round(Number($("custom-pts").value)); if (!Number.isFinite(pts)) pts = 0; pts = Math.max(-20, Math.min(20, pts)); }
+  const note = $("note").value.trim().slice(0, 140);
+  const ev = { who: [...state.who], action: a.key, pts, note, date: $("date").value || todayISO(), createdAt: Date.now() };
+  if (a.key === "custom") ev.label = note || "Nešto drugo";
+  $("submit").disabled = true;
+  $("status").textContent = "Upisujem…";
+  try {
+    await store.add(ev);
+    const names = ev.who.map(w => nameOf[w]).join(", ");
+    $("status").textContent = `Upisano: ${names} ${fmtPts(pts)}.`;
+    if (pts > 0) confetti();
+    state.who.clear(); state.action = null; $("note").value = "";
+    renderForm();
+  } catch (err) {
+    if (err?.code === "invalid_argument") { setReadOnly(); $("status").textContent = ""; }
+    else $("status").textContent = "Upis nije uspeo. Pokušaj ponovo za par sekundi.";
+    renderForm();
+  }
+});
+
+function setReadOnly() {
+  state.canWrite = false;
+  $("form").hidden = true;
+  $("readonly").hidden = false;
+  renderFeed();
+}
+
+/* Storage: shared claude.ai db inside the claude.ai viewer; anywhere else (GitHub Pages) a read-only copy from data.json */
+function staticStore() {
+  return {
+    shared: false,
+    async start(onChange) {
+      let list = [];
+      try { const r = await fetch("data.json", { cache: "no-store" }); if (r.ok) list = await r.json(); } catch {}
+      onChange(Array.isArray(list) ? list : []);
+    },
+    add() { return Promise.reject(new Error("read-only")); },
+    remove() { return Promise.reject(new Error("read-only")); }
+  };
+}
+function dbStore(db) {
+  const col = db.collection("events");
+  return {
+    shared: true,
+    start(onChange) {
+      col.onSnapshot(snap => onChange(snap.docs.map(d => ({ id: d.id, ...d.data() }))),
+        err => { $("foot").textContent = "Veza sa bazom je prekinuta. Osveži stranicu."; });
+    },
+    add(ev) { return col.add(ev); },
+    remove(id) { return col.doc(id).delete(); }
+  };
+}
+
+
+/* Himna: browsers only allow sound after a tap, so it starts on the first tap anywhere unless turned off */
+const audio = $("himna"), player = $("player");
+let himnaOff = false;
+try { himnaOff = localStorage.getItem("himna-off") === "1"; } catch {}
+function syncPlayer() {
+  const on = !audio.paused;
+  player.classList.toggle("on", on);
+  player.setAttribute("aria-pressed", String(on));
+  $("player-label").textContent = on ? "Himna svira" : "Pusti himnu";
+}
+audio.addEventListener("play", syncPlayer);
+audio.addEventListener("pause", syncPlayer);
+audio.volume = 0.6;
+player.addEventListener("click", e => {
+  e.stopPropagation();
+  if (audio.paused) { himnaOff = false; audio.play().catch(() => {}); }
+  else { himnaOff = true; audio.pause(); }
+  try { localStorage.setItem("himna-off", himnaOff ? "1" : "0"); } catch {}
+});
+document.addEventListener("pointerdown", function first(e) {
+  if (player.contains(e.target)) return;
+  document.removeEventListener("pointerdown", first);
+  if (!himnaOff && audio.paused) audio.play().catch(() => {});
+});
+
+const HEART = '<svg viewBox="0 0 24 24"><path fill="#f3cb38" d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg>';
+const CLOVER = '<svg viewBox="0 0 28 28"><g fill="#00a084"><circle cx="9" cy="9" r="5"/><circle cx="19" cy="9" r="5"/><circle cx="9" cy="19" r="5"/><circle cx="19" cy="19" r="5"/></g></svg>';
+function confetti() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  for (let i = 0; i < 26; i++) {
+    const el = document.createElement("span");
+    el.className = "confetti";
+    el.innerHTML = i % 2 ? HEART : CLOVER;
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.animationDelay = Math.random() * 0.5 + "s";
+    el.style.animationDuration = 1.4 + Math.random() * 1.2 + "s";
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 3400);
+  }
+}
+
+renderForm();
+render();
+
+(async () => {
+  let db = null, user = null;
+  if (window.claude?.use) {
+    try { [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]); } catch {}
+  }
+  const inViewer = !!window.claude?.use;
+  if (inViewer && !db) {
+    state.signedOut = true; state.loading = false;
+    $("form").hidden = true;
+    $("readonly").hidden = false;
+    $("readonly").textContent = "Nisi prijavljen na claude.ai, pa ne vidiš poene. Prijavi se dugmetom Sign in, pa otvori link ponovo.";
+    $("foot").textContent = "Poeni su zajednički i vide se samo prijavljenima.";
+    state.canWrite = false;
+    render();
+    return;
+  }
+  if (!inViewer) {
+    store = staticStore();
+    setReadOnly();
+    $("readonly").textContent = "Poene upisuje Stefan. Ako je neko nešto uradio ili ispalio, javi mu u grupi.";
+    $("foot").textContent = "Tabela se osvežava kad Stefan upiše nove poene.";
+  } else {
+    store = dbStore(db);
+    if (user) {
+      try { const can = await user.can("data.write"); if (can === false) setReadOnly(); } catch {}
+    }
+    $("foot").textContent = "Poeni su zajednički: svi koji otvore ovu stranicu vide iste unose, uživo.";
+  }
+  store.start(list => { state.loading = false; state.events = list; render(); });
+})();
+</script>
+
+</body>
+</html>

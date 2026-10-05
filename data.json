@@ -1,0 +1,313 @@
+[
+ {
+  "who": [
+   "ksenija",
+   "tara",
+   "djina",
+   "nemanja",
+   "stefan",
+   "marko",
+   "vanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Mikanov rođendan",
+  "date": "2026-07-04",
+  "createdAt": 1767225600000,
+  "id": "chat-00"
+ },
+ {
+  "who": [
+   "milos",
+   "ksenija",
+   "nemanja",
+   "tara",
+   "stefan",
+   "marko",
+   "vanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Đinin i Vaskin plac",
+  "date": "2026-07-06",
+  "createdAt": 1767225600001,
+  "id": "chat-01"
+ },
+ {
+  "who": [
+   "nemanja",
+   "djina"
+  ],
+  "action": "kafa",
+  "pts": 2,
+  "note": "Kafa radnim danom",
+  "date": "2026-07-07",
+  "createdAt": 1767225600002,
+  "id": "chat-02"
+ },
+ {
+  "who": [
+   "nemanja"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Šetnja uz Gradac kod Manastira Ćelije",
+  "date": "2026-07-26",
+  "createdAt": 1767225600003,
+  "id": "chat-03"
+ },
+ {
+  "who": [
+   "nemanja"
+  ],
+  "action": "vozio",
+  "pts": 3,
+  "note": "Pokupio Đinu, Mikana i Stefa do Gradca",
+  "date": "2026-07-26",
+  "createdAt": 1767225600004,
+  "id": "chat-04"
+ },
+ {
+  "who": [
+   "nemanja",
+   "djina",
+   "milos",
+   "stefan",
+   "tara"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Gradac",
+  "date": "2026-07-26",
+  "createdAt": 1767225600005,
+  "id": "chat-05"
+ },
+ {
+  "who": [
+   "stefan"
+  ],
+  "action": "pomogao",
+  "pts": 2,
+  "note": "Poneo igru, vodu i prostirku",
+  "date": "2026-07-26",
+  "createdAt": 1767225600006,
+  "id": "chat-06"
+ },
+ {
+  "who": [
+   "milos"
+  ],
+  "action": "pomogao",
+  "pts": 2,
+  "note": "Nabavka u Lidlu za ekipu",
+  "date": "2026-07-26",
+  "createdAt": 1767225600007,
+  "id": "chat-07"
+ },
+ {
+  "who": [
+   "nemanja"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Okupljanje na reci",
+  "date": "2026-07-29",
+  "createdAt": 1767225600009,
+  "id": "chat-09"
+ },
+ {
+  "who": [
+   "nemanja",
+   "stefan",
+   "djina",
+   "vanja",
+   "milos",
+   "tara"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Okupljanje na reci",
+  "date": "2026-07-29",
+  "createdAt": 1767225600010,
+  "id": "chat-10"
+ },
+ {
+  "who": [
+   "vanja"
+  ],
+  "action": "pomogao",
+  "pts": 2,
+  "note": "Došla direktno iz Kragujevca",
+  "date": "2026-07-29",
+  "createdAt": 1767225600011,
+  "id": "chat-11"
+ },
+ {
+  "who": [
+   "vanja",
+   "djina",
+   "marko"
+  ],
+  "action": "podrska",
+  "pts": 1,
+  "note": "Podrška Kseniji i sestri",
+  "date": "2026-07-29",
+  "createdAt": 1767225600012,
+  "id": "chat-12"
+ },
+ {
+  "who": [
+   "milos"
+  ],
+  "action": "doprinos",
+  "pts": 3,
+  "note": "Pomogao da se udomi kuca sa Divčibara",
+  "date": "2026-08-01",
+  "createdAt": 1767225600013,
+  "id": "chat-13"
+ },
+ {
+  "who": [
+   "djina",
+   "vanja",
+   "nemanja",
+   "stefan"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Mikanov novi posao",
+  "date": "2026-08-10",
+  "createdAt": 1767225600014,
+  "id": "chat-14"
+ },
+ {
+  "who": [
+   "milos"
+  ],
+  "action": "nijecastio",
+  "pts": -2,
+  "note": "Prejed 2026 pomeren jer Mikan neće da časti",
+  "date": "2026-08-17",
+  "createdAt": 1767225600015,
+  "id": "chat-15"
+ },
+ {
+  "who": [
+   "vanja",
+   "ksenija",
+   "tara",
+   "marko",
+   "stefan",
+   "milos"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Nemanjin posao u Yandexu",
+  "date": "2026-08-19",
+  "createdAt": 1767225600016,
+  "id": "chat-16"
+ },
+ {
+  "who": [
+   "djina",
+   "ksenija",
+   "milos",
+   "stefan",
+   "vanja",
+   "tara",
+   "nemanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Markov rođendan",
+  "date": "2026-09-11",
+  "createdAt": 1767225600017,
+  "id": "chat-17"
+ },
+ {
+  "who": [
+   "stefan"
+  ],
+  "action": "pomogao",
+  "pts": 2,
+  "note": "Ponudio Kseniji i Milošu svoja kola",
+  "date": "2026-09-11",
+  "createdAt": 1767225600018,
+  "id": "chat-18"
+ },
+ {
+  "who": [
+   "marko"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Rođendan u selu, ugostio ekipu",
+  "date": "2026-09-12",
+  "createdAt": 1767225600019,
+  "id": "chat-19"
+ },
+ {
+  "who": [
+   "marko"
+  ],
+  "action": "castio",
+  "pts": 3,
+  "note": "Častio za rođendan i Nemanjin posao",
+  "date": "2026-09-12",
+  "createdAt": 1767225600020,
+  "id": "chat-20"
+ },
+ {
+  "who": [
+   "stefan",
+   "milos",
+   "djina",
+   "nemanja",
+   "vanja"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Markov rođendan",
+  "date": "2026-09-12",
+  "createdAt": 1767225600021,
+  "id": "chat-21"
+ },
+ {
+  "who": [
+   "stefan"
+  ],
+  "action": "pomogao",
+  "pts": 2,
+  "note": "Doneo 5 kg leda",
+  "date": "2026-09-12",
+  "createdAt": 1767225600022,
+  "id": "chat-22"
+ },
+ {
+  "who": [
+   "stefan"
+  ],
+  "action": "doprinos",
+  "pts": 3,
+  "note": "Napravio himnu drugarića",
+  "date": "2026-09-26",
+  "createdAt": 1767225600023,
+  "id": "chat-23"
+ },
+ {
+  "who": [
+   "milos",
+   "stefan",
+   "nemanja",
+   "djina",
+   "vanja",
+   "tara"
+  ],
+  "action": "potvrdio",
+  "pts": 1,
+  "note": "Potvrdio dolazak za 17.10.",
+  "date": "2026-10-01",
+  "createdAt": 1767225600024,
+  "id": "chat-24"
+ }
+]
