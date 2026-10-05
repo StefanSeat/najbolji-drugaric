@@ -921,5 +921,16 @@
   "date": "2026-10-01",
   "createdAt": 1767225600024,
   "id": "chat-24"
+ },
+ {
+  "who": [
+   "stefan"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Tari 4 godine u Glovu",
+  "date": "2026-10-05",
+  "createdAt": 1791199754928,
+  "id": "bot-muv634c0umx"
  }
 ]
