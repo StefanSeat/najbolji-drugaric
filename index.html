@@ -172,7 +172,7 @@ footer { font-size: 0.8rem; color: var(--muted); padding-bottom: 56px; }
     <div class="section-head">
       <h2 id="h-rank">Tabela</h2>
       <div class="seg" role="group" aria-label="Period">
-        <button type="button" id="p-all" aria-pressed="true">Sve vreme</button>
+        <button type="button" id="p-all" aria-pressed="true">Cela 2026.</button>
         <button type="button" id="p-month" aria-pressed="false">Ovaj mesec</button>
       </div>
     </div>
@@ -251,6 +251,8 @@ const ACTIONS = [
 const nameOf = Object.fromEntries(MEMBERS.map(m => [m.id, m.name]));
 const actOf = Object.fromEntries(ACTIONS.map(a => [a.key, a]));
 
+/* Sezona: računaju se samo unosi od ovog datuma */
+const SEASON_START = "2026-01-01";
 const state = { loading: true, signedOut: false, events: [], period: "all", filter: null, who: new Set(), action: null, canWrite: true, pendingDelete: null };
 let store = null;
 
@@ -305,7 +307,7 @@ function renderFeed() {
   const list = state.events
     .filter(e => !f || (e.who || []).includes(f))
     .slice()
-    .sort((a, b) => (b.date || "").localeCompare(a.date || "") || (b.createdAt || 0) - (a.createdAt || 0));
+    .sort((a, b) => (a.date || "").localeCompare(b.date || "") || (a.createdAt || 0) - (b.createdAt || 0));
   $("clear").hidden = !f;
   const sum = $("summary");
   if (f) {
@@ -494,7 +496,7 @@ render();
     }
     $("foot").textContent = "Poeni su zajednički: svi koji otvore ovu stranicu vide iste unose, uživo.";
   }
-  store.start(list => { state.loading = false; state.events = list; render(); });
+  store.start(list => { state.loading = false; state.events = list.filter(e => (e.date || "") >= SEASON_START); render(); });
 })();
 </script>
 
