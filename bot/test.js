@@ -100,3 +100,14 @@ test("druženje: otvori, prijave, bilo", async () => {
   assert.match(await handle("!bilo", nem), /Nema otvorenog/);
   assert.match(await handle("!kocasti", nem), /Časti: \*/);
 });
+
+test("rođendanska čestitka", async () => {
+  const { makeHandler } = await import("./commands.js");
+  const handle = makeHandler({}, {});
+  const t = await handle("!rodjendan Vanja");
+  assert.match(t, /Srećan rođendan, Vanja/);
+  assert.match(t, /ples/);
+  assert.match(t, /mačka/);
+  assert.match(await handle("!rođendan mikan"), /Srećan rođendan, Miloš/);
+  assert.match(await handle("!rodjendan"), /Napiši kome/);
+});

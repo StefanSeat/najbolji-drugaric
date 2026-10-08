@@ -3,6 +3,7 @@ import {
   MEMBERS, parseKarma, tableText, describe, todayBelgrade, HELP, actionsText,
   nameOf, findMember, memberFromProfileName, ACTIONS,
 } from "./karma.js";
+import { birthdayText } from "./birthday.js";
 import { update } from "./store.js";
 
 // Komande od dve reči svode se na jednu: "!ko casti" → "!kocasti"
@@ -10,6 +11,7 @@ const TWO_WORD = { "!ko": ["casti", "časti", "dolazi"], "!ne": ["mogu", "dolazi
 const ALIASES = {
   "!pomoć": "!pomoc", "!help": "!pomoc", "!poništi": "!ponisti", "!kočasti": "!kocasti",
   "!druženje": "!druzenje", "!otkaži": "!otkazi", "!nedolazim": "!nemogu",
+  "!rođendan": "!rodjendan", "!rodendan": "!rodjendan", "!čestitka": "!rodjendan", "!cestitka": "!rodjendan",
 };
 
 function parseCommand(text) {
@@ -122,6 +124,12 @@ export function makeHandler(store, state) {
       st.senders[ctx.senderId] = m.id;
       await state.save();
       return `👋 Zapamtio sam: ti si ${m.name}.`;
+    }
+
+    if (cmd === "!rodjendan") {
+      const m = findMember(args[0]);
+      if (!m) return "Napiši kome, npr. !rodjendan Vanja";
+      return birthdayText(m.id);
     }
 
     if (cmd === "!kocasti") {
