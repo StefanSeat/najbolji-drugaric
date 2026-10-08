@@ -966,5 +966,20 @@
   "date": "2026-10-05",
   "createdAt": 1791200127513,
   "id": "bot-muv6b3tl79y"
+ },
+ {
+  "who": [
+   "stefan",
+   "marko",
+   "djina",
+   "nemanja",
+   "milos"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Vanjin rođendan",
+  "date": "2026-10-08",
+  "createdAt": 1791460000000,
+  "id": "y-47"
  }
 ]
