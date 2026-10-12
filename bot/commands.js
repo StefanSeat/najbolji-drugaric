@@ -4,6 +4,7 @@ import {
   nameOf, findMember, memberFromProfileName, ACTIONS,
 } from "./karma.js";
 import { birthdayText } from "./birthday.js";
+import { anniversaryText } from "./anniversary.js";
 import { update } from "./store.js";
 
 // Komande od dve reči svode se na jednu: "!ko casti" → "!kocasti"
@@ -12,6 +13,7 @@ const ALIASES = {
   "!pomoć": "!pomoc", "!help": "!pomoc", "!poništi": "!ponisti", "!kočasti": "!kocasti",
   "!druženje": "!druzenje", "!otkaži": "!otkazi", "!nedolazim": "!nemogu",
   "!rođendan": "!rodjendan", "!rodendan": "!rodjendan", "!čestitka": "!rodjendan", "!cestitka": "!rodjendan",
+  "!godišnjica": "!godisnjica", "!godisnica": "!godisnjica",
 };
 
 function parseCommand(text) {
@@ -130,6 +132,12 @@ export function makeHandler(store, state) {
       const m = findMember(args[0]);
       if (!m) return "Napiši kome, npr. !rodjendan Vanja";
       return birthdayText(m.id);
+    }
+
+    if (cmd === "!godisnjica") {
+      const m = findMember(args[0]);
+      if (!m) return "Napiši kome, npr. !godisnjica Đina";
+      return anniversaryText(m.id);
     }
 
     if (cmd === "!kocasti") {

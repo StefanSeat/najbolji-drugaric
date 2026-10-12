@@ -143,6 +143,7 @@ export const HELP = [
   "*!tabela* trenutni poeni za 2026.",
   "*!ko casti* nasumično bira ko časti 🎲",
   "*!rodjendan <ime>* rođendanska čestitka 🎂",
+  "*!godisnjica <ime>* čestitka za godišnjicu braka 💍",
   "",
   "*Druženja*",
   "  !druzenje Gradac subota 12h  otvori prijave",

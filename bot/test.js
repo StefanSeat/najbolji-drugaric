@@ -111,3 +111,13 @@ test("rođendanska čestitka", async () => {
   assert.match(await handle("!rođendan mikan"), /Srećan rođendan, Miloš/);
   assert.match(await handle("!rodjendan"), /Napiši kome/);
 });
+
+test("čestitka za godišnjicu", async () => {
+  const { makeHandler } = await import("./commands.js");
+  const handle = makeHandler({}, {});
+  const t = await handle("!godisnjica Đina");
+  assert.match(t, /Srećna prva godišnjica braka, Đurdjina/);
+  assert.match(t, /Rim/);
+  assert.match(await handle("!godišnjica djina"), /godišnjica braka/);
+  assert.match(await handle("!godisnjica"), /Napiši kome/);
+});

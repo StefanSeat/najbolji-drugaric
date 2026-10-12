@@ -13,6 +13,7 @@ Sve ostale poruke ignoriše: ne čuva ih, ne šalje ih nikome i ne koristi AI.
 | `!tabela` | Tabela za 2026. |
 | `!ko casti` | Nasumično bira ko časti (među prijavljenima, ako je druženje otvoreno) |
 | `!rodjendan Vanja` | Rođendanska čestitka (lične želje se dopisuju u `birthday.js`) |
+| `!godisnjica Đina` | Čestitka za godišnjicu braka (lične želje se dopisuju u `anniversary.js`) |
 | `!druzenje Gradac subota 12h` | Otvara prijave za druženje |
 | `!dolazim` / `!ne mogu` | Prijava; može i za druge: `!dolazim Marko Tara` |
 | `!ko dolazi` | Spisak prijavljenih |
