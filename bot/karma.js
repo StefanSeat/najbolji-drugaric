@@ -27,10 +27,6 @@ export const ACTIONS = [
   { key: "cestitao", label: "Čestitao rođendan / uspeh", pts: 1, aliases: ["cestitao", "cestitala", "cestitali", "cestitka"] },
   { key: "potvrdio", label: "Javio se na vreme", pts: 1, aliases: ["potvrdio", "potvrdila", "potvrdili", "javio", "javila"] },
   { key: "podrska", label: "Podržao drugarića", pts: 1, aliases: ["podrska", "podrzao", "podrzala"] },
-  { key: "kasnio", label: "Kasnio", pts: -1, aliases: ["kasnio", "kasnila", "kasnili", "kasni"] },
-  { key: "nijecastio", label: "Izbegao da časti", pts: -2, aliases: ["nijecastio", "nijecastila", "izbegao", "izbegla", "stipsa"] },
-  { key: "ghost", label: "Ghostovao grupu", pts: -2, aliases: ["ghost", "ghostovao", "ghostovala", "nestao", "nestala"] },
-  { key: "ispalio", label: "Ispalio", pts: -3, aliases: ["ispalio", "ispalila", "ispalili", "ispali", "otkazao", "otkazala"] },
 ];
 
 export const MAX_PTS = 20;
@@ -92,12 +88,14 @@ export function parseKarma(text) {
     pts = action.pts;
     rest = tokens.slice(i + 1);
   }
-  if (!Number.isFinite(pts) || pts === 0) return { error: "Poeni moraju biti broj različit od nule, npr. +3 ili -2" };
+  if (!Number.isFinite(pts) || pts === 0) return { error: "Poeni moraju biti broj veći od nule, npr. +3" };
+  // Negativnih poena više nema: drugarići samo skupljaju poene
+  if (pts < 0) return { error: "Minusa više nema 🍀 Poeni mogu samo da se dodaju, npr. +3" };
   if (Math.abs(pts) > MAX_PTS) return { error: `Najviše ${MAX_PTS} poena odjednom.` };
 
   const note = rest.join(" ").slice(0, 140);
   const ev = { who, action: action ? action.key : "custom", pts, note };
-  if (!action) ev.label = note || (pts > 0 ? "Bonus" : "Minus");
+  if (!action) ev.label = note || "Bonus";
   return ev;
 }
 
@@ -138,7 +136,7 @@ export const HELP = [
   "*!karma <ko> <akcija ili poeni> [razlog]*",
   "  !karma Marko castio",
   "  !karma Tara Đina +3 došle na kafu",
-  "  !karma Mikan ispalio Gradac",
+  "  !karma Mikan pomogao Gradac",
   "",
   "*!tabela* trenutni poeni za 2026.",
   "*!ko casti* nasumično bira ko časti 🎲",
@@ -159,7 +157,7 @@ export const HELP = [
 ].join("\n");
 
 export function actionsText() {
-  return "*Akcije*\n" + ACTIONS.map(a => `${a.key}: ${fmtPts(a.pts)} (${a.label})`).join("\n") + "\nIli bilo koji broj, npr. +4 ili -2";
+  return "*Akcije*\n" + ACTIONS.map(a => `${a.key}: ${fmtPts(a.pts)} (${a.label})`).join("\n") + "\nIli bilo koji pozitivan broj, npr. +4";
 }
 
 /** Nađe člana po imenu ili nadimku (jedna reč), ili vrati null. */

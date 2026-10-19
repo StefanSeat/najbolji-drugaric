@@ -18,16 +18,15 @@ test("više imena, broj i razlog", () => {
 });
 
 test("broj bez akcije daje custom", () => {
-  const e = parseKarma("Stef -2 zaboravio igru");
+  const e = parseKarma("Stef +2 sredio igru");
   assert.equal(e.action, "custom");
-  assert.equal(e.pts, -2);
-  assert.equal(e.label, "zaboravio igru");
+  assert.equal(e.pts, 2);
+  assert.equal(e.label, "sredio igru");
 });
 
-test("minus akcija", () => {
-  const e = parseKarma("Djina ispalila Adu");
-  assert.equal(e.pts, -3);
-  assert.equal(e.note, "Adu");
+test("minusa više nema", () => {
+  assert.match(parseKarma("Stef -2 zaboravio igru").error, /Minusa više nema/);
+  assert.ok(parseKarma("Djina ispalila Adu").error);
 });
 
 test("greške", () => {

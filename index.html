@@ -165,7 +165,7 @@ footer { font-size: 0.8rem; color: var(--muted); padding-bottom: 56px; }
       <div class="eyebrow">Drugarići · karma</div>
       <h1>Najbolji <em>Drugarić</em></h1>
     </div>
-    <p class="lede">Ko je kupio poklon, ko je otišao na kafu, ko je organizovao, a ko je ispalio. Svaka dobra stvar donosi poene, svako ispaljivanje ih odnosi.</p>
+    <p class="lede">Ko je kupio poklon, ko je otišao na kafu, ko je organizovao, a ko je bio uz drugariće. Svaka dobra stvar donosi poene, a minusa više nema.</p>
   </header>
 
   <section aria-labelledby="h-rank">
@@ -192,7 +192,7 @@ footer { font-size: 0.8rem; color: var(--muted); padding-bottom: 56px; }
         <div class="actions" id="acts"></div>
       </div>
       <div class="row custom-pts" id="custom-wrap" hidden>
-        <label class="field"><span class="label">Poeni</span><input type="number" id="custom-pts" value="1" min="-20" max="20" step="1"></label>
+        <label class="field"><span class="label">Poeni</span><input type="number" id="custom-pts" value="1" min="1" max="20" step="1"></label>
       </div>
       <div class="row">
         <label class="field"><span class="label">Detalj</span><input type="text" id="note" maxlength="140" placeholder="npr. Gradac, rođendan kod Marka"></label>
@@ -242,10 +242,6 @@ const ACTIONS = [
   { key: "cestitao", label: "Čestitao rođendan / uspeh", pts: 1 },
   { key: "potvrdio", label: "Javio se na vreme", pts: 1 },
   { key: "podrska", label: "Podržao drugarića", pts: 1 },
-  { key: "kasnio", label: "Kasnio", pts: -1 },
-  { key: "nijecastio", label: "Izbegao da časti", pts: -2 },
-  { key: "ghost", label: "Ghostovao grupu", pts: -2 },
-  { key: "ispalio", label: "Ispalio", pts: -3 },
   { key: "custom", label: "Nešto drugo", pts: null }
 ];
 const nameOf = Object.fromEntries(MEMBERS.map(m => [m.id, m.name]));
@@ -315,7 +311,7 @@ function renderFeed() {
     const plus = mine.filter(n => n > 0).reduce((a, b) => a + b, 0);
     const minus = mine.filter(n => n < 0).reduce((a, b) => a + b, 0);
     sum.hidden = false;
-    sum.innerHTML = `<span>${esc(nameOf[f])}</span><span>Ukupno <b>${fmtPts(plus + minus)}</b></span><span>Dobrih dela <b>${fmtPts(plus)}</b></span><span>Minusa <b>${fmtPts(minus)}</b></span><span>Unosa <b>${list.length}</b></span>`;
+    sum.innerHTML = `<span>${esc(nameOf[f])}</span><span>Ukupno <b>${fmtPts(plus + minus)}</b></span><span>Dobrih dela <b>${fmtPts(plus)}</b></span><span>Unosa <b>${list.length}</b></span>`;
   } else sum.hidden = true;
 
   if (!list.length) {
@@ -370,7 +366,7 @@ $("form").addEventListener("submit", async e => {
   if (!state.who.size || !state.action) return;
   const a = actOf[state.action];
   let pts = a.pts;
-  if (pts == null) { pts = Math.round(Number($("custom-pts").value)); if (!Number.isFinite(pts)) pts = 0; pts = Math.max(-20, Math.min(20, pts)); }
+  if (pts == null) { pts = Math.round(Number($("custom-pts").value)); if (!Number.isFinite(pts)) pts = 0; pts = Math.max(1, Math.min(20, pts)); }
   const note = $("note").value.trim().slice(0, 140);
   const ev = { who: [...state.who], action: a.key, pts, note, date: $("date").value || todayISO(), createdAt: Date.now() };
   if (a.key === "custom") ev.label = note || "Nešto drugo";
@@ -487,7 +483,7 @@ render();
   if (!inViewer) {
     store = staticStore();
     setReadOnly();
-    $("readonly").textContent = "Poene upisuje Stefan. Ako je neko nešto uradio ili ispalio, javi mu u grupi.";
+    $("readonly").textContent = "Poene upisuje Stefan. Ako je neko uradio nešto lepo, javi mu u grupi.";
     $("foot").textContent = "Tabela se osvežava kad Stefan upiše nove poene.";
   } else {
     store = dbStore(db);

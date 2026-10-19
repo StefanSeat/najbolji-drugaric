@@ -298,17 +298,6 @@
  },
  {
   "who": [
-   "nemanja"
-  ],
-  "action": "kasnio",
-  "pts": -1,
-  "note": "Kasnio skoro sat na sopstveni Secret Santa",
-  "date": "2025-12-26",
-  "createdAt": 1759276800021,
-  "id": "y-21"
- },
- {
-  "who": [
    "marko",
    "vanja",
    "nemanja",
@@ -463,17 +452,6 @@
  },
  {
   "who": [
-   "djina"
-  ],
-  "action": "ispalio",
-  "pts": -3,
-  "note": "Otkazala istog dana (sastanak za plac)",
-  "date": "2026-04-05",
-  "createdAt": 1759276800033,
-  "id": "y-33"
- },
- {
-  "who": [
    "ksenija",
    "milos",
    "stefan",
@@ -596,17 +574,6 @@
   "date": "2026-05-24",
   "createdAt": 1759276800044,
   "id": "y-44"
- },
- {
-  "who": [
-   "stefan"
-  ],
-  "action": "ispalio",
-  "pts": -3,
-  "note": "Javio istog dana da ne stiže sa svadbe u Hrvatskoj",
-  "date": "2026-05-24",
-  "createdAt": 1759276800045,
-  "id": "y-45"
  },
  {
   "who": [
