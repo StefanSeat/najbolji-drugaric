@@ -1027,5 +1027,16 @@
   "date": "2026-10-17",
   "createdAt": 1767225600026,
   "id": "chat-26"
+ },
+ {
+  "who": [
+   "marko"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Svadba za pamćenje: lokacija, hrana i bend za čistu desetku, mladenka i Bogdan preslatki, a drugarići ugošćeni kao kraljevi",
+  "date": "2026-10-17",
+  "createdAt": 1767225600028,
+  "id": "chat-28"
  }
 ]
