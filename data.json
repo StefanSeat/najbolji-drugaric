@@ -973,7 +973,8 @@
    "marko",
    "djina",
    "nemanja",
-   "milos"
+   "milos",
+   "ksenija"
   ],
   "action": "cestitao",
   "pts": 1,
@@ -981,5 +982,39 @@
   "date": "2026-10-08",
   "createdAt": 1791460000000,
   "id": "y-47"
+ },
+ {
+  "who": [
+   "ksenija",
+   "stefan",
+   "nemanja",
+   "marko",
+   "tara",
+   "milos",
+   "vanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Đinina prva godišnjica braka",
+  "date": "2026-10-12",
+  "createdAt": 1767225600025,
+  "id": "chat-25"
+ },
+ {
+  "who": [
+   "milos",
+   "stefan",
+   "nemanja",
+   "djina",
+   "vanja",
+   "tara",
+   "ksenija"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Markova svadba",
+  "date": "2026-10-17",
+  "createdAt": 1767225600026,
+  "id": "chat-26"
  }
 ]
