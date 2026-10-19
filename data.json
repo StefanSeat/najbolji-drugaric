@@ -985,6 +985,17 @@
  },
  {
   "who": [
+   "stefan"
+  ],
+  "action": "doprinos",
+  "pts": 3,
+  "note": "Kupio leksikon drugarića",
+  "date": "2026-10-11",
+  "createdAt": 1767225600027,
+  "id": "chat-27"
+ },
+ {
+  "who": [
    "ksenija",
    "stefan",
    "nemanja",
