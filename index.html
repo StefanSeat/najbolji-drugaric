@@ -289,12 +289,12 @@ function renderBoard() {
       <span class="name">${esc(m.name)}</span>
       <span class="pts">${fmtPts(m.pts)}</span>
     </div>` : "<div></div>").join("");
-  const max = Math.max(1, ...ranked.map(r => Math.abs(r.pts)));
+  const max = Math.max(1, ...ranked.filter(r => !r.left).map(r => Math.abs(r.pts)));
   $("rank").innerHTML = ranked.map((m, i) => `
     <li tabindex="0" data-id="${m.id}" class="${state.filter === m.id ? "active" : ""}${m.left ? " left" : ""}" aria-label="${esc(m.name)}, ${m.left ? "napustio grupu, " : ""}${m.pts} poena, prikaži dnevnik">
       <span class="n">${m.left ? "–" : i + 1}</span>
       <span class="who"${m.left ? ' title="Napustio grupu"' : ""}>${m.left ? `<s>${esc(m.name)}</s>` : esc(m.name)}</span>
-      <span class="bar"><i class="${m.pts < 0 ? "neg" : ""}" style="width:${(Math.abs(m.pts) / max) * 100}%"></i></span>
+      <span class="bar"><i class="${m.pts < 0 ? "neg" : ""}" style="width:${Math.min(100, (Math.abs(m.pts) / max) * 100)}%"></i></span>
       <span class="p">${fmtPts(m.pts)}</span>
     </li>`).join("");
 }

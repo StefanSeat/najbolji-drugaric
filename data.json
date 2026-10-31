@@ -1063,5 +1063,17 @@
   "date": "2026-10-31",
   "createdAt": 1767225600031,
   "id": "chat-31"
+ },
+ {
+  "who": [
+   "aleksandar"
+  ],
+  "action": "custom",
+  "label": "Izašao iz grupe",
+  "pts": -999,
+  "note": "Izašao iz grupe",
+  "date": "2026-10-31",
+  "createdAt": 1767225600034,
+  "id": "chat-34"
  }
 ]
