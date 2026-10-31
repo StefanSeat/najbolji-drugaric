@@ -120,7 +120,7 @@ export function makeHandler(store, state) {
 
     if (cmd === "!ja") {
       const m = findMember(args[0]);
-      if (!m) return `Napiši svoje ime, npr. !ja Marko. Imena: ${MEMBERS.map(x => x.name).join(", ")}`;
+      if (!m) return `Napiši svoje ime, npr. !ja Marko. Imena: ${MEMBERS.filter(x => !x.left).map(x => x.name).join(", ")}`;
       if (!ctx.senderId) return "Ne mogu da prepoznam tvoj broj.";
       const st = await state.get();
       st.senders[ctx.senderId] = m.id;
@@ -143,7 +143,7 @@ export function makeHandler(store, state) {
     if (cmd === "!kocasti") {
       const st = await state.get();
       const d = st.druzenje;
-      const pool = d && d.yes.length >= 2 ? d.yes : MEMBERS.map(m => m.id);
+      const pool = d && d.yes.length >= 2 ? d.yes : MEMBERS.filter(m => !m.left).map(m => m.id);
       const winner = nameOf(pick(pool));
       const from = d && d.yes.length >= 2 ? `među onima koji dolaze na "${d.title}"` : "među svim drugarićima";
       return `${pick(CASTI_LINES)}\n\nBiram ${from}…\n\n💰 Časti: *${winner}*!\n${pick(CASTI_ENDINGS)}`;

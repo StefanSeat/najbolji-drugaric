@@ -7,7 +7,8 @@ export const MEMBERS = [
   { id: "marko", name: "Marko", aliases: ["marko", "mare", "cavoski"] },
   { id: "vanja", name: "Vanja", aliases: ["vanja", "vanjo"] },
   { id: "nemanja", name: "Nemanja", aliases: ["nemanja", "nemanji", "nemanju", "kapi", "karapandza", "karapandzic"] },
-  { id: "aleksandar", name: "Aleksandar", aliases: ["aleksandar", "aleksandra", "aleks", "alex", "macak", "aca", "petrovic"] },
+  // left: napustio grupu; ostaje precrtan na dnu tabele i više ne dobija poene
+  { id: "aleksandar", name: "Aleksandar", left: "2026-10-31", aliases: ["aleksandar", "aleksandra", "aleks", "alex", "macak", "aca", "petrovic"] },
   { id: "djina", name: "Đurdjina", aliases: ["djina", "dina", "djino", "djurdjina", "durdjina", "djurdja"] },
   { id: "stefan", name: "Stefan", aliases: ["stefan", "stef", "stefanu", "seat"] },
   { id: "milos", name: "Miloš", aliases: ["milos", "mikan", "mikane", "milosu"] },
@@ -71,6 +72,8 @@ export function parseKarma(text) {
   if (!who.length) {
     return { error: tokens.length ? `Ne znam ko je "${tokens[0]}". Probaj npr: !karma Marko +3 častio` : "Napiši ko i šta, npr: !karma Marko +3 častio" };
   }
+  const gone = who.map(id => MEMBERS.find(m => m.id === id)).filter(m => m.left);
+  if (gone.length) return { error: `${gone.map(m => m.name).join(", ")} je napustio grupu i više ne dobija poene.` };
   if (i >= tokens.length) return { error: "Fali akcija ili poeni, npr: !karma Marko +3 častio ili !karma Marko castio" };
 
   const head = tokens[i];
@@ -106,14 +109,14 @@ export function seasonEvents(events, start = SEASON_START) {
 export function scores(events) {
   const s = Object.fromEntries(MEMBERS.map(m => [m.id, 0]));
   for (const e of events) for (const w of e.who || []) if (w in s) s[w] += Number(e.pts) || 0;
-  return MEMBERS.map(m => ({ id: m.id, name: m.name, pts: s[m.id] }))
-    .sort((a, b) => b.pts - a.pts || a.name.localeCompare(b.name, "sr"));
+  return MEMBERS.map(m => ({ id: m.id, name: m.name, pts: s[m.id], left: !!m.left }))
+    .sort((a, b) => (a.left - b.left) || b.pts - a.pts || a.name.localeCompare(b.name, "sr"));
 }
 
 export function tableText(events) {
   const ranked = scores(seasonEvents(events));
   const medal = ["🥇", "🥈", "🥉"];
-  const lines = ranked.map((r, i) => `${medal[i] || `${i + 1}.`} ${r.name} ${r.pts}`);
+  const lines = ranked.map((r, i) => r.left ? `– ~${r.name}~ ${r.pts} (napustio grupu)` : `${medal[i] || `${i + 1}.`} ${r.name} ${r.pts}`);
   return `🏆 *Najbolji drugarić 2026*\n${lines.join("\n")}`;
 }
 

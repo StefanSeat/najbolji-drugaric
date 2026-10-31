@@ -1005,5 +1005,63 @@
   "date": "2026-10-17",
   "createdAt": 1767225600028,
   "id": "chat-28"
+ },
+ {
+  "who": [
+   "marko"
+  ],
+  "action": "custom",
+  "label": "Slika godine: Stefan i Aleks",
+  "pts": 1,
+  "note": "Slika godine: Stefan i Aleks",
+  "date": "2026-10-19",
+  "createdAt": 1767225600030,
+  "id": "chat-30"
+ },
+ {
+  "who": [
+   "stefan"
+  ],
+  "action": "doprinos",
+  "pts": 3,
+  "note": "Popunio svoj deo leksikona",
+  "date": "2026-10-20",
+  "createdAt": 1767225600032,
+  "id": "chat-32"
+ },
+ {
+  "who": [
+   "djina",
+   "stefan"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Organizacija pozorišta: Buba u uhu, KPGT 14.11.",
+  "date": "2026-10-23",
+  "createdAt": 1767225600029,
+  "id": "chat-29"
+ },
+ {
+  "who": [
+   "djina"
+  ],
+  "action": "doprinos",
+  "pts": 3,
+  "note": "Popunila svoj deo leksikona",
+  "date": "2026-10-23",
+  "createdAt": 1767225600033,
+  "id": "chat-33"
+ },
+ {
+  "who": [
+   "ksenija"
+  ],
+  "action": "custom",
+  "label": "Rešila Stefanovu zagonetku",
+  "pts": 1,
+  "note": "Rešila Stefanovu zagonetku",
+  "date": "2026-10-31",
+  "createdAt": 1767225600031,
+  "id": "chat-31"
  }
 ]

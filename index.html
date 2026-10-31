@@ -94,6 +94,7 @@ header .lede { grid-column: 1 / -1; }
 .rank li:hover, .rank li:focus-visible { background: var(--surface); outline: none; }
 .rank, .feed { background: color-mix(in srgb, var(--bg) 82%, transparent); border-radius: 14px; padding: 8px; }
 .rank li.active { background: var(--blossom-soft); }
+.rank li.left { opacity: 0.55; }
 .rank .n { font-family: var(--font-num); color: var(--muted); font-size: 0.8rem; text-align: right; }
 .rank .who { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .bar { position: relative; height: 10px; background: var(--line); border-radius: 999px; overflow: hidden; }
@@ -223,7 +224,7 @@ const MEMBERS = [
   { id: "marko", name: "Marko" },
   { id: "vanja", name: "Vanja" },
   { id: "nemanja", name: "Nemanja" },
-  { id: "aleksandar", name: "Aleksandar" },
+  { id: "aleksandar", name: "Aleksandar", left: "2026-10-31" },
   { id: "djina", name: "Đurdjina" },
   { id: "stefan", name: "Stefan" },
   { id: "milos", name: "Miloš" },
@@ -273,8 +274,8 @@ function periodEvents() {
 
 function renderBoard() {
   const s = scores(periodEvents());
-  const ranked = MEMBERS.map(m => ({ ...m, pts: s[m.id] })).sort((a, b) => b.pts - a.pts || a.name.localeCompare(b.name, "sr"));
-  const top = ranked.slice(0, 3);
+  const ranked = MEMBERS.map(m => ({ ...m, pts: s[m.id] })).sort((a, b) => (!!a.left - !!b.left) || b.pts - a.pts || a.name.localeCompare(b.name, "sr"));
+  const top = ranked.filter(m => !m.left).slice(0, 3);
   if (!state.events.length || ranked.every(r => r.pts === 0)) {
     $("podium").innerHTML = `<div class="step first" style="grid-column:1 / -1"><span class="crown">Najbolji drugarić</span><span class="name">${state.signedOut ? "Prijavi se da vidiš poene" : state.loading ? "Učitavam poene…" : "Još niko nema poene"}</span></div>`;
     $("rank").innerHTML = "";
@@ -290,9 +291,9 @@ function renderBoard() {
     </div>` : "<div></div>").join("");
   const max = Math.max(1, ...ranked.map(r => Math.abs(r.pts)));
   $("rank").innerHTML = ranked.map((m, i) => `
-    <li tabindex="0" data-id="${m.id}" class="${state.filter === m.id ? "active" : ""}" aria-label="${esc(m.name)}, ${m.pts} poena, prikaži dnevnik">
-      <span class="n">${i + 1}</span>
-      <span class="who">${esc(m.name)}</span>
+    <li tabindex="0" data-id="${m.id}" class="${state.filter === m.id ? "active" : ""}${m.left ? " left" : ""}" aria-label="${esc(m.name)}, ${m.left ? "napustio grupu, " : ""}${m.pts} poena, prikaži dnevnik">
+      <span class="n">${m.left ? "–" : i + 1}</span>
+      <span class="who"${m.left ? ' title="Napustio grupu"' : ""}>${m.left ? `<s>${esc(m.name)}</s>` : esc(m.name)}</span>
       <span class="bar"><i class="${m.pts < 0 ? "neg" : ""}" style="width:${(Math.abs(m.pts) / max) * 100}%"></i></span>
       <span class="p">${fmtPts(m.pts)}</span>
     </li>`).join("");
@@ -334,7 +335,7 @@ function renderFeed() {
 }
 
 function renderForm() {
-  $("who").innerHTML = MEMBERS.map(m => `<button type="button" class="chip" data-who="${m.id}" aria-pressed="${state.who.has(m.id)}">${esc(m.name)}</button>`).join("");
+  $("who").innerHTML = MEMBERS.filter(m => !m.left).map(m => `<button type="button" class="chip" data-who="${m.id}" aria-pressed="${state.who.has(m.id)}">${esc(m.name)}</button>`).join("");
   $("acts").innerHTML = ACTIONS.map(a => `<button type="button" class="act" data-act="${a.key}" aria-pressed="${state.action === a.key}"><span>${esc(a.label)}</span>${a.pts == null ? '<span class="pill zero">±</span>' : `<span class="pill ${pillClass(a.pts)}">${fmtPts(a.pts)}</span>`}</button>`).join("");
   $("custom-wrap").hidden = state.action !== "custom";
   $("submit").disabled = !(state.who.size && state.action);

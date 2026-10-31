@@ -120,3 +120,12 @@ test("čestitka za godišnjicu", async () => {
   assert.match(await handle("!godišnjica djina"), /godišnjica braka/);
   assert.match(await handle("!godisnjica"), /Napiši kome/);
 });
+
+test("član koji je napustio grupu", () => {
+  assert.match(parseKarma("Aleks +3 kafa").error, /napustio grupu/);
+  assert.match(parseKarma("Marko Aleks castio").error, /napustio grupu/);
+  const t = tableText([{ who: ["aleksandar"], pts: 9, date: "2026-03-01" }, { who: ["tara"], pts: 1, date: "2026-03-01" }]);
+  const lines = t.split("\n");
+  assert.match(lines[lines.length - 1], /~Aleksandar~ 9 \(napustio grupu\)/);
+  assert.equal(scores([{ who: ["aleksandar"], pts: 50 }])[8].id, "aleksandar");
+});
