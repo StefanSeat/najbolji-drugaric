@@ -1066,6 +1066,22 @@
  },
  {
   "who": [
+   "ksenija",
+   "milos",
+   "stefan",
+   "tara",
+   "djina",
+   "vanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Nemanjina slava",
+  "date": "2026-11-08",
+  "createdAt": 1767225600042,
+  "id": "chat-42"
+ },
+ {
+  "who": [
    "stefan",
    "djina",
    "nemanja"
@@ -1103,6 +1119,23 @@
   "date": "2026-11-15",
   "createdAt": 1767225600037,
   "id": "chat-37"
+ },
+ {
+  "who": [
+   "ksenija",
+   "nemanja",
+   "djina",
+   "marko",
+   "stefan",
+   "tara",
+   "vanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Miloševa slava",
+  "date": "2026-11-16",
+  "createdAt": 1767225600041,
+  "id": "chat-41"
  },
  {
   "who": [
