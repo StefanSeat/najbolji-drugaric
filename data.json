@@ -1066,14 +1066,78 @@
  },
  {
   "who": [
-   "aleksandar"
+   "stefan",
+   "djina",
+   "nemanja"
   ],
-  "action": "custom",
-  "label": "Izašao iz grupe",
-  "pts": -999,
-  "note": "Izašao iz grupe",
-  "date": "2026-10-31",
-  "createdAt": 1767225600034,
-  "id": "chat-34"
+  "action": "dosao",
+  "pts": 3,
+  "note": "Pozorište: Buba u uhu, KPGT",
+  "date": "2026-11-14",
+  "createdAt": 1767225600035,
+  "id": "chat-35"
+ },
+ {
+  "who": [
+   "djina",
+   "nemanja",
+   "tara",
+   "milos",
+   "marko",
+   "vanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Čestitali Aleksu rođendan u grupi",
+  "date": "2026-11-15",
+  "createdAt": 1767225600036,
+  "id": "chat-36"
+ },
+ {
+  "who": [
+   "nemanja"
+  ],
+  "action": "doprinos",
+  "pts": 3,
+  "note": "Popunio svoj deo leksikona",
+  "date": "2026-11-15",
+  "createdAt": 1767225600037,
+  "id": "chat-37"
+ },
+ {
+  "who": [
+   "milos"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Igrice: rezervisao sto",
+  "date": "2026-11-24",
+  "createdAt": 1767225600038,
+  "id": "chat-38"
+ },
+ {
+  "who": [
+   "milos",
+   "stefan",
+   "tara",
+   "nemanja"
+  ],
+  "action": "dosao",
+  "pts": 3,
+  "note": "Igrice",
+  "date": "2026-11-24",
+  "createdAt": 1767225600039,
+  "id": "chat-39"
+ },
+ {
+  "who": [
+   "djina"
+  ],
+  "action": "organizovao",
+  "pts": 5,
+  "note": "Kupila karte za JDP: Narodni poslanik",
+  "date": "2026-11-24",
+  "createdAt": 1767225600040,
+  "id": "chat-40"
  }
 ]

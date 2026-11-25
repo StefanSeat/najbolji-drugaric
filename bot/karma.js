@@ -8,7 +8,7 @@ export const MEMBERS = [
   { id: "vanja", name: "Vanja", aliases: ["vanja", "vanjo"] },
   { id: "nemanja", name: "Nemanja", aliases: ["nemanja", "nemanji", "nemanju", "kapi", "karapandza", "karapandzic"] },
   // left: napustio grupu; ostaje precrtan na dnu tabele i više ne dobija poene
-  { id: "aleksandar", name: "Aleksandar", left: "2026-10-31", aliases: ["aleksandar", "aleksandra", "aleks", "alex", "macak", "aca", "petrovic"] },
+  { id: "aleksandar", name: "Aleksandar", aliases: ["aleksandar", "aleksandra", "aleks", "alex", "macak", "aca", "petrovic"] },
   { id: "djina", name: "Đurdjina", aliases: ["djina", "dina", "djino", "djurdjina", "durdjina", "djurdja"] },
   { id: "stefan", name: "Stefan", aliases: ["stefan", "stef", "stefanu", "seat"] },
   { id: "milos", name: "Miloš", aliases: ["milos", "mikan", "mikane", "milosu"] },
