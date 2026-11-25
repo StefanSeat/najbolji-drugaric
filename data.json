@@ -1123,6 +1123,23 @@
  {
   "who": [
    "ksenija",
+   "stefan",
+   "djina",
+   "milos",
+   "nemanja",
+   "marko",
+   "vanja"
+  ],
+  "action": "cestitao",
+  "pts": 1,
+  "note": "Nidžin rođendan",
+  "date": "2026-11-15",
+  "createdAt": 1767225600043,
+  "id": "chat-43"
+ },
+ {
+  "who": [
+   "ksenija",
    "nemanja",
    "djina",
    "marko",
