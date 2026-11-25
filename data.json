@@ -1206,5 +1206,17 @@
   "date": "2026-11-24",
   "createdAt": 1767225600040,
   "id": "chat-40"
+ },
+ {
+  "who": [
+   "tara"
+  ],
+  "action": "custom",
+  "label": "Došla na igrice iako je imala naporan dan",
+  "pts": 1,
+  "note": "Došla na igrice iako je imala naporan dan",
+  "date": "2026-11-24",
+  "createdAt": 1767225600045,
+  "id": "chat-45"
  }
 ]
