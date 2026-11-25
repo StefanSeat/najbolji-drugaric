@@ -1156,6 +1156,18 @@
  },
  {
   "who": [
+   "nemanja"
+  ],
+  "action": "custom",
+  "label": "Najviše lobirao da se Alex vrati u grupu",
+  "pts": 1,
+  "note": "Najviše lobirao da se Alex vrati u grupu",
+  "date": "2026-11-15",
+  "createdAt": 1767225600046,
+  "id": "chat-46"
+ },
+ {
+  "who": [
    "ksenija",
    "nemanja",
    "djina",
