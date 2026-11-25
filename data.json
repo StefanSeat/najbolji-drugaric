@@ -1139,6 +1139,23 @@
  },
  {
   "who": [
+   "marko",
+   "nemanja",
+   "djina",
+   "stefan",
+   "milos",
+   "tara"
+  ],
+  "action": "custom",
+  "label": "Glasao da se Alex vrati u grupu",
+  "pts": 1,
+  "note": "Glasao da se Alex vrati u grupu",
+  "date": "2026-11-15",
+  "createdAt": 1767225600044,
+  "id": "chat-44"
+ },
+ {
+  "who": [
    "ksenija",
    "nemanja",
    "djina",
